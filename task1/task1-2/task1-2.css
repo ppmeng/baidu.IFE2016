@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+p {
+	text-indent: 2em;
+}
+body {
+	min-width: 980px;
+	background: #e2e2e2;
+	line-height: 1.8;
+}
+#header-wrap {
+    width: 100%;
+    height: 80px;
+    background: #484848;
+}
+#header-wrap h1 {
+	float: left;
+	margin-left: 50px;
+	margin-top: 10px;
+	font-size: 40px;
+	color: #fff;
+	font-family: cursive;
+}
+#header-wrap li {
+	float: left;
+	margin-right: 30px;
+	line-height: 80px;
+	font-size: 14px;
+}
+#header-wrap a {
+	text-decoration: none;
+	color: #fff;
+}
+
+#header-wrap ul {
+	float: right;
+}
+
+.artical-box, 
+.sidebar {
+	margin: 20px;
+	background: #fff;
+}
+.artical-box {
+	padding: 35px 20px;
+}
+.artical-box h3 {
+    color: #888;
+}
+.artical-info {
+	text-indent: 0;
+	font-size: 13px;
+	color: #888;
+}
+.list1 {
+    text-indent: 2em;
+    list-style: none;	
+}
+.img-wrap {
+	border: 1px solid #888;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.img-wrap p {
+	text-indent: 0;
+	text-align: center;
+	letter-spacing: .3em;
+}
+.img-wrap img {
+	width: 150px;
+	height: 180px;
+}
+.ol-list li {
+	margin-left: 3em;
+}
+.tab1 {
+	width: 100%;
+	border-collapse:collapse;
+    text-indent: 1em;
+}
+.td-box td,
+.td-box th {
+	border: 1px solid #e2e2e2;
+	text-align: left;
+}
+.tab1 th {
+	color: #fff;
+	background: #484848;
+}
+.tab1 tr:last-child {
+   background: #888;
+}
+
+.sidebar {
+	padding: 20px;
+}
+.sidebar p {
+	text-indent: 0;
+}
+.sidebar-heading {
+	padding-top: 10px;
+}
+.sidebar-heading .left-bar {
+	float: left;
+	width: 5px;
+	height: 50px;
+	background: #e2e2e2;
+}
+.sidebar-heading h2 {
+    float: left;
+    margin-left: 20px;
+    line-height: 50px;
+}
+.form-info {
+	padding: 10px;
+	margin-top: 60px;
+}
+.main-info {
+	display: table;
+	padding-left: 300px;
+}
+.tablerow {
+	display: table-row;
+}
+.tablerow p {
+	display: table-cell;
+	padding: 6px;
+}
+.tablerow p:first-child {
+	vertical-align: top;
+	text-align: right;
+}
+.tablerow textarea {
+	width: 700px;
+	height: 80px;
+}
+.submit-wrap {
+    width: 100%;
+    font-size: 17px;
+    height: 30px;
+    border-radius: 10px;
+    background: #6495ED;
+}
+.copyright {
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	color: #fff;
+	background:#484848;
+}
