@@ -16,27 +16,31 @@ body {
     height: 80px;
     background: #484848;
 }
+#header-center {
+	display: inline-block;
+	width: 100%;
+    margin: 20px;
+}
 #header-wrap h1 {
 	float: left;
-	margin-left: 50px;
-	margin-top: 10px;
-	font-size: 40px;
+	margin-left: 30px;
+	font-size: 35px;
 	color: #fff;
 	font-family: cursive;
 }
 #header-wrap li {
 	float: left;
 	margin-right: 30px;
-	line-height: 80px;
+	line-height: 40px;
 	font-size: 14px;
 }
 #header-wrap a {
 	text-decoration: none;
 	color: #fff;
 }
-
 #header-wrap ul {
 	float: right;
+	margin-right: 40px;
 }
 
 .artical-box, 
