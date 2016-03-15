@@ -57,7 +57,7 @@ body {
 .artical-box, 
 .sidebar {
 	background: #fff;
-	border: 1px solid #000;
+	border-style: outset;
 }
 .artical-box {
 	margin-bottom: 20px;
