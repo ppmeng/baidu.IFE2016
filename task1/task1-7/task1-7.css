@@ -41,6 +41,9 @@ header a {
 	font-size: 15px;
 	color: #686868;
 }
+header a:hover {
+	border-bottom: 5px solid #e74f4d;
+}
 .now-page {
 	color: #e74f4d;
 	border-bottom: 5px solid #e74f4d;
@@ -97,17 +100,21 @@ header a {
 	width: 100%;
 	height: 250px;
 }
-.advan-1,
-.advan-2,
-.advan-3,
-.advan-4 {
-	float: left;
-	width: 25%;
-	height: 200px;
+.advantage table {
+	width: 100%;
 	text-align: center;
-	margin-top: 50px;
 }
-
+.advan-img {
+	height: 120px;
+}
+.advan-slogon p {
+	width: 150px;
+	margin: 0 auto;
+	color: #707070;
+}
+.ad-slogon {
+	border-right: 2px solid #a8a8a8;
+}
 /*question*/
 .question {
 	width: 100%;
@@ -149,6 +156,12 @@ header a {
 .search input {
 	background: #e74f4d;
 	border: none;
+}
+.map-search {
+	color: #f8f8f8;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 10px;
 }
 .search form {
 	margin-left: -30px;
@@ -332,12 +345,13 @@ header a {
 }
 .apply-head h2 {
 	padding-top: 100px;
+	padding-bottom: 10px;
 	font-weight: normal;
 	color: #484848;
 }
 .apply-head p {
 	width: 580px;
-	margin: 40px auto 0;
+	margin: 30px auto 0;
 	color: #888;
 }
 
@@ -347,7 +361,7 @@ header a {
 }
 .apply-detail {
 	float: left;
-	width: 400px;
+	width: 320px;
 	line-height: 2;
     color: #888;
 }
@@ -359,37 +373,61 @@ header a {
 	font-size: 14px;
 	margin-bottom: 40px;
 }
+.apply-detail .more {
+	width: 6px;
+	height: 6px;
+	border: 1px solid #000;
+	border-width: 0 1px 1px 0;
+	transform: rotate(45deg);
+}
+.apply-detail span {
+	position: relative;
+	font-size: 12px;
+	top: -20px;
+	left: 16px;
+}
+.apply-detail a {
+    text-decoration: none;
+    color: #888;
+    position: relative;
+    top: -30px;
+    float: right;
+    margin-right: 20px;
+}
 
 .apply-form {
-	width: 620px;
+	width: 720px;
 	float: right;
 }
 .apply-form .name,
 .apply-form .age,
 .apply-form .tel,
 .apply-form .address {
-	width: 290px;
+	width: 300px;
 	height: 40px;
 	margin: 8px;
-	background: #d5d5d5;
+	background: #e2e2e2;
 	border: none;
+	padding-left: 10px;
 }
 .apply-form textarea {
 	margin-left: 8px;
 	margin-top: 8px;
-	width: 596px;
+	width: 626px;
 	height: 120px;
-	background: #d5d5d5;
+	background: #e2e2e2;
 	border: none;
+	padding-left: 10px;
+	padding-top: 10px;
 }
 .submit {
 	margin-left: 8px;
 	margin-top: 16px;
-	width: 596px;
+	width: 636px;
 	height: 40px;
 	font-size: 15px;
 	color: #484848;
-	background: #d5d5d5;
+	background: #e2e2e2;
 	border: none;
 }
 
@@ -411,6 +449,7 @@ header a {
 	font-size: 14px;
 	margin-bottom: 25px;
 }
+
 .contact-email {
 	height: 40px;
 }
@@ -418,6 +457,7 @@ header a {
 	width: 430px;
 	height: 40px;
 	border:none;
+	padding-left: 10px;
 }
 .submit-email {
 	width: 70px;

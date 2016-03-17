@@ -23,7 +23,7 @@
 	</header>
 
 	<div class="center">
-		<div class="banner">
+		<section class="banner">
 			<img src="img/banner_bg.jpg">
 			<div class="text-wrap">
                 <div class="text">
@@ -32,39 +32,47 @@
 				    <p class="to-try">开始体验</p>
                 </div>
 			</div>
-		</div>
+		</section>
 
-		<div class="advantage">
-			<div class="advan-1">
-               <img src="img/advan-1.png">
-				<p>打造全新世界观，让你更爱你的生活</p>
-			</div>
-			<div class="advan-2">
-                <div class="ad">
-                    <img src="img/advan-2.png">
-				    <p>丰富多彩的公益活动，发挥世界的主人公意识</p>
-                </div>
-			</div>
-			<div class="advan-3">
-                <div class="ad">
-                    <img src="img/advan-3.png">
-				    <p>时尚的新理念，超前体验未知的生活</p>
-                </div>
-			</div>
-			<div class="advan-4">
-                <div class="ad">
-                    <img src="img/advan-4.png">
-				     <p>完善的培养机制，培养你全新的世界观</p>
-                 </div>
-			</div>
-		</div>
+		<section class="advantage">
+			<table>
+                <tr class="advan-img">
+                    <td>
+                        <img src="img/advan-1.png">
+                    </td>
+                    <td>
+                        <img src="img/advan-2.png">
+                    </td>
+                    <td>
+                        <img src="img/advan-3.png">
+                    </td>
+                    <td>
+                        <img src="img/advan-4.png">
+                    </td>
+                </tr>
+                <tr class="advan-slogon">
+                    <td class="ad-slogon">
+				        <p>打造全新世界观，让你更爱你的生活</p>
+                    </td>
+                    <td class="ad-slogon">
+				        <p>丰富多彩的公益活动，发挥世界的主人公意识</p>
+                    </td>
+                    <td class="ad-slogon">
+				        <p>时尚的新理念，超前体验未知的生活</p>
+                    </td>
+			        <td>
+				         <p>完善的培养机制，培养你全新的世界观</p>
+                    </td>
+			    </tr>
+            </table>
+		</section>
 
-		<div class="question">
+		<section class="question">
             <img src="img/logo.png">
 			<p>关于新世界，你不知道的还有什么？</p>
-		</div>
+		</section>
 
-		<div class="search">
+		<section class="search">
 			<h2>查找新世界城市活动信息</h2>
             <p>每个城市有不同的活动信息，请自助查询您所需要了解的城市</p>
             <form>
@@ -86,11 +94,11 @@
                     <option value="zhengzhou">郑州</option>
                     <option value="zhengzhou">郑州</option>
             	</select>
-            	<input type="submit" value="搜索">
+            	<input class="map-search" type="submit" value="搜 索">
             </form>
-        </div>
+        </section>
 
-        <div class="activity">
+        <section class="activity">
             <div class="wrap">
                 <div class="act-wrap">
         		    <img src="img/act-1.jpg">
@@ -113,9 +121,9 @@
         		    <p>奢侈消费大派送</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="anti-top">
+        <section class="anti-top">
             <div class="detail-1">
         	    <img src="img/detail-1.jpg">
         	    <div class="imgtext-1">
@@ -135,9 +143,9 @@
                     <div class="circle"></div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="anti-bottom">
+        <section class="anti-bottom">
             <div class="detail-3">
                 <p>新时代<br>关于爱生活的我们</p>
                 <a href="">查看更多</a>
@@ -149,9 +157,9 @@
             <div class="detail-5">
                 <img src="img/detail-2.jpg">
             </div>
-        </div>
+        </section>
 
-        <div class="apply">
+        <section class="apply">
         	<div class="apply-head">
         		<h2>成为我们的志愿者</h2>
         		<p>新世界的大家庭需要每一个爱生活的人的加入，如果你够年轻，有梦想，有激情，那就不要犹豫，快来加入我们，成为改变所有人生活的人</p>
@@ -161,13 +169,16 @@
                     <div class="protocol">
         		        <h3>新世界志愿者协议</h3>
         		        <p>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则</p>
+                        <a href="javascript:void(0)"><div class="more"></div><span>more</span></a>
                     </div>
-                    <div class="right">
+                    <div class="yourright">
         		        <h3>新世界志愿者权利</h3>
         		        <p>新世界志愿者享受新世界内部的所有资源共享的权利，并且享受所有新世界活动的优先参与资格</p>
+                        <a href="javascript:void(0)"><div class="more"></div><span>more</span></a>
                     </div>
-        		  <h3 class="more-clause">更多条款</h3>
-        	    </div>
+        		    <h3 class="more-clause">更多条款</h3>
+                    <a href="javascript:void(0)"><div class="more"></div><span>more</span></a>
+                </div>
         	    <div class="apply-form">
         		    <form>
         		        <input class="name" type="text" name="name" placeholder="姓名："><input class="age" type="text" name="age" placeholder="年龄："><br>
@@ -177,9 +188,9 @@
         		    </form>
         	    </div>
             </div>
-        </div>
+        </section>
 
-        <div class="contact">
+        <section class="contact">
         	<h2>联系我们</h2>
         	<p>为了更好地获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯，也可以通过以下任何方式关注我们的动态</p>
             <div class="contact-email">
@@ -191,7 +202,7 @@
         	    <img src="img/contact_twiter.png">
         	    <img src="img/contact_global.png">
         	</div>
-        </div>
+        </section>
     </div>
     <footer>
         <span>@2016新世界</span>
