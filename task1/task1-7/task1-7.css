@@ -161,5 +161,128 @@ header a {
 .activity {
 	width: 100%;
 	height: 600px;
+	text-align: center;
+	line-height: 1.5;
+	color: #888;
 	background: #f8f8f8;
+}
+.act-wrap {
+	float: left;
+	width: 260px;
+}
+.act-wrap img {
+	border: 1px solid #e2e2e2;
+	padding: 10px;
+	background: #fff
+}
+.activity .wrap {
+    width: 1040px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+.act-head{
+	color: #000;
+}
+.sh-head {
+	text-align: justify;
+	text-align-last: justify;
+	font-size: 24px;
+	padding: 0 20px;
+}
+
+/*detail-top*/
+.anti-top {
+	width: 100%;
+	height: 560px;
+}
+.detail-1 {
+	position: relative;
+	width: 66%;
+	height: 560px;
+	color: #fff;
+}
+.detail-1 img {
+	width: 100%;
+	height: 560px;
+}
+.imgtext-1 {
+	position: absolute;
+	bottom: 140px;
+	width: 100%;
+	text-align: center;
+}
+.imgtext-1 h2{
+    font-size: 50px;
+    font-weight: normal; 
+}
+.imgtext-1 h3 {
+	font-size: 150px;
+	font-weight: normal; 
+}
+.imgtext-1 p {
+	font-size: 20px;
+	line-height: 1.5;
+}
+.detail-2 {
+	position: relative;
+	width: 34%;
+	height: 560px;
+	top: -560px;
+	left: 66%;
+	text-align: center;
+}
+.detail-2 h2 {
+	font-weight: normal;
+	margin-top: 100px;
+}
+.detail-2 p {
+	color: #888;
+	line-height: 2.2;
+	text-align: left;
+	padding: 20px 70px;
+	margin-bottom: 30px;
+}
+.detail-2 span {
+	color: #e74f4d;
+}
+.detail-2 a {
+	padding: 8px 30px;
+	text-decoration: none;
+	color: #e74f4d;
+	border: 1px solid #e74f4d;
+}
+.circle-wrap {
+	width: 100px;
+	margin: 50px auto;
+}
+.circle {
+	float: left;
+	margin-left: 16px;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #888;
+	border-radius: 50%;
+}
+.firstcircle {
+	background: #888;
+}
+
+/*detail-bottom*/
+.anti-bottom {
+	width: 100%;
+	height: 500px;
+}
+.detail-3 {
+	float: left;
+    width: 33.33333%;
+    height: 100%;
+	background: #e74f4d;
+}
+.detail-4 {
+	position: relative;
+	background: blue;
+}
+.detail-5 img {
+	width: 300px;
+    height: 500px;
 }
