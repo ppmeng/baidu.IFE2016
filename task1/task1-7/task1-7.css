@@ -2,3 +2,164 @@
 	margin: 0;
 	padding: 0;
 }
+body {
+	min-width: 1280px;
+    font-family: "Microsoft YaHei", arial, sans-serif;
+}
+
+
+/*header*/
+header {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+}
+
+header .logo {
+	float: left;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.logo img {
+	position: relative;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+}
+header span {
+	margin-left: 10px;
+}
+
+header nav {
+	float: right;
+	margin-right: 50px;
+}
+header a {
+    padding: 15px;
+	text-decoration: none;
+	font-size: 15px;
+	color: #686868;
+}
+.now-page {
+	color: #e74f4d;
+	border-bottom: 5px solid #e74f4d;
+}
+.log-in img {
+	position: relative;
+	top: 4px;
+	right: 5px;
+}
+.log-in {
+	color: #e74f4d;
+}
+
+
+.center {
+	width: 100%;
+}
+/*banner*/
+.banner img {
+   width: 100%;
+   height: 700px;
+}
+.text-wrap {
+	position: relative;
+	width: 1280px;
+	margin: 0 auto;
+	color: #fff;
+}
+.text {
+	position: absolute;
+	left: 100px;
+	bottom: 250px;
+}
+.text .slogon-heading {
+    font-size: 60px;
+}
+.text .slogon {
+	font-size: 20px;
+	margin-top: 10px;
+	line-height: 1.5;
+}
+.text .to-try {
+	width: 300px;
+	height: 60px;
+	margin-top: 30px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 25px;
+	background: #e74f4d;
+}
+
+/*advantage*/
+.advantage {
+	width: 100%;
+	height: 250px;
+}
+.advan-1,
+.advan-2,
+.advan-3,
+.advan-4 {
+	float: left;
+	width: 25%;
+	height: 200px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+/*question*/
+.question {
+	width: 100%;
+	height: 350px;
+	text-align: center;
+	background: #e8e8e8;
+}
+.question img {
+	margin-top: 80px;
+}
+.question p {
+	margin-top: 30px;
+	font-size: 50px;
+	color: #888;
+}
+
+/*search*/
+.search {
+	width: 100%;
+	height: 300px;
+	background-image: url(img/search_bg.jpg);
+	background-size: 100% 300px;
+	text-align: center;
+	color: #fff;
+}
+.search h2 {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+.search p {
+	padding-bottom: 50px;
+}
+.search select,
+.search input {
+	width: 250px;
+	height: 40px;
+	margin-left: 30px;
+}
+.search input {
+	background: #e74f4d;
+	border: none;
+}
+.search form {
+	margin-left: -30px;
+}
+.search option {
+	background: #e8e8e8;
+} 
+
+/*activity*/
+.activity {
+	width: 100%;
+	height: 600px;
+	background: #f8f8f8;
+}
