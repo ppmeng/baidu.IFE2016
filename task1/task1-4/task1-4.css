@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.gray-box {
+	position: absolute;
+	width: 400px;
+	height: 200px;
+	
+	top: 50%;
+	left: 50%;
+	transform: translate(-200px, -100px);
+	/*
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	*/
+	background: #ccc;
+	overflow: hidden;
+}
+.sector {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: 50px solid #fc0;
+	border-radius: 50px;
+}
+.sector:first-child {
+	top: -50px;
+	left: -50px;
+}
+.sector:last-child {
+	bottom: -50px;
+	right: -50px;
+}
