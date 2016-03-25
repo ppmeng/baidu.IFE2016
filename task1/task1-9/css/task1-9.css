@@ -6,10 +6,13 @@
 	-webkit-box-sizing: border-box; /*Safari*/
 }
 body {
-	background: #eeeded;
 	min-width: 1280px;
 	font-family: "Simhei", "Microsoft yahei", sans-serif;
 }
+a {
+	text-decoration: none;
+}
+/*复用样式*/
 .clearfix:before,
 .clearfix:after {
     content: "";
@@ -18,6 +21,12 @@ body {
 }
 .clearfix {
 	zoom: 1;
+}
+.bg-white {
+	background: #fff;
+}
+.com-margin {
+	margin-bottom: 10px;
 }
 
 /*header*/
@@ -31,15 +40,15 @@ header {
 .global-search {
 	float: left;
 }
-.login img {
-	float: right;
-	padding-top: 8px;
-}
 .login p {
 	float: right;
 	text-decoration: none;
 	color: #fff;
 	line-height: 36px;
+}
+.login img {
+	float: right;
+	padding-top: 8px;
 }
 .global-search {
  	margin-left: 60%;
@@ -58,19 +67,35 @@ header {
 	background-image: none;
 }
 
-/*aside左侧栏部分*/
+
+/*container部分*/
+.container {
+	position: relative;
+	width: 100%;
+	background: #eeeded;
+	overflow: hidden;
+}
 .sidebar {
 	float: left;
-	width: 250px;
-	height: 100%;
-	padding: 20px 50px;
+	width: 20%;
 	color: #b9babd;
 	background: #2a2e3d;
 }
+.content-wrap {
+	float: left;
+	width: 80%;
+}
+.sidebar,
+.content-wrap {
+	padding-bottom: 10000px;
+	margin-bottom: -10000px;
+}
+
+/*aside左侧栏细节部分*/
 .who {
     height: 56px;
     line-height: 56px;
-    margin-bottom: 10px;
+    padding: 20px 0 0 40px;
 }
 .logowrap {
 	float: left;
@@ -92,8 +117,12 @@ header {
 }
 
 .ff-wrap {
-	height: 80px;
-	padding: 18px 0;
+	height: 70px;
+	margin: 20px 0 0 50px;
+	opacity: 0.8;
+}
+.ff-wrap span {
+	font-size: 13px;
 }
 .ff-wrap .favorate,
 .ff-wrap .fans {
@@ -107,9 +136,20 @@ header {
 	border-left: 1px solid #b9babd;
 }
 
-.sidebar li {
+.main-list li {
+	font-size: 13px;
 	list-style: none;
-	line-height: 2;
+	line-height: 2.5;
+	padding-left: 40px;
+}
+.main-list a {
+	color: #fff;
+}
+.file-list li {
+	margin-left: -5px;
+}
+.text-list li {
+	margin-left: -8px;
 }
 .more {
 	display: inline-block;
@@ -120,31 +160,157 @@ header {
 }
 .orien-1 {
 	transform: rotate(-45deg);
-    margin-bottom: 3px;
 }
 .orien-2 {
 	transform: rotate(45deg);
-	margin-bottom: 3px;
 }
-.text-wrap {
-	margin-left: 30px;
+.orien-1,
+.orien-2 {
+	margin-bottom: 4px;
 }
-.text-wrap a {
-	text-decoration: none;
-	color: #b9babd;
+.personal-li {
+	background: #383d4e;
 }
-.aboutme li {
+.fold {
+	opacity: 0.5;
+}
+.aboutme {
+	opacity: 0.5;
 	margin-top: 20px;
 }
+.personal-li span,
 .aboutme span {
-	margin-left: 10px;
-}
-.aboutme a {
-	text-decoration: none;
-	color: #b9babd;
+    padding-left: 0.8em;
 }
 
-.container {
+
+/*content-wrap*/
+/*nav部分*/
+.nav-wrap {
+	width: 100%;
+	height: 30px;
+	padding-left: 30px;
+	margin-bottom: 20px;
+	color: #888;
+	line-height: 30px;
+}
+.nav-wrap a {
+	font-size: 14px;
+	color: #888;
+}
+.nav-wrap a:last-of-type {
+	color: blue;
+}
+
+
+.content {
+	margin: 0 50px;
+}
+
+/*查询部分*/
+.inquiry-wrap {
+	padding: 10px 0;
+}
+
+.form-margin {
+    margin: 3px 5px;
+}
+.select-box {
+	padding: 3px 5px;
+	-moz-appearance: none; /*Firefox*/
+	-webkit-appearance: none; /*Safari Chrome*/
+}
+.w70 {
+	width: 70px;
+}
+.w120 {
+    width: 120px;
+}
+.arrow {
+	background: url(../img/arrow.png) no-repeat 96% 5px;
+}
+.arrow-blue {
+	background: url(../img/b-arrow.png) no-repeat 99% 1px;
+}
+.inquiry-sort,
+.inquiry-bs {
 	float: left;
-	margin-right:;
+	margin-left: 30px;
+}
+.inquiry-bs {
+	position: relative;
+	margin-right: 50px;
+}
+.inquiry-bs img{
+    position: absolute;
+    top: 8px;
+    right: -6px;
+}
+.inquiry-bs a span {
+    position: relative;
+    top: -16px;
+    font-size: 12px;
+    color: #fff;
+}
+.inq-search {
+	position: relative;
+	width: 56px;
+	height: 26px;
+    top: -16px;
+    left: 20px;
+    border-radius: 4px;
+    border: none;
+    color: #fff;
+    background: #388ac1;	
+}
+
+/*历史查询部分*/
+.history {
+	margin-left: -0.6%;
+}
+.front,
+.end,
+.time,
+.hist-inq {
+	float: left;
+	height: 64px;
+	margin-left: 0.6%;
+	text-align: center;
+	line-height: 26px;
+}
+.time {
+	width: 12%;
+	padding-top: 6px;
+}
+.time span:first-of-type {
+	font-size: 18px;
+	color: #aaaaaa;
+}
+.time span:last-of-type {
+	font-size: 24px;
+	font-weight: 600;
+	color: #f73c0a;
+}
+.front,
+.end {
+	padding-top: 20px;
+	width: 4%;
+}
+.hist-inq {
+	line-height: 64px;
+	width: 14.6%;
+}
+.hist-inq p {
+	float: right;
+	margin-right: 10px;
+}
+.hist-inq img {
+   margin-top: 14px;
+}
+
+/*4月份统计*/
+.statistics h3 {
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
 }
