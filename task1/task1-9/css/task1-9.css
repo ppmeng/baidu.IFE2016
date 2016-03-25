@@ -25,6 +25,9 @@ a {
 .bg-white {
 	background: #fff;
 }
+table {
+	border-collapse: collapse;
+}
 .com-margin {
 	margin-bottom: 10px;
 }
@@ -288,7 +291,6 @@ header {
 }
 .time span:last-of-type {
 	font-size: 24px;
-	font-weight: 600;
 	color: #f73c0a;
 }
 .front,
@@ -309,8 +311,333 @@ header {
 }
 
 /*4月份统计*/
+.statistics {
+	margin-bottom: 20px;
+}
 .statistics h3 {
     margin-top: 20px;
     font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
+}
+.count {
+	float: left;
+	width: 22%;
+	height: 70px;
+	padding: 10px;
+	line-height: 25px;
+	font-size: 14px;
+}
+.margin-4 {
+	margin-left: 4%;
+}
+.count-data {
+	float: left;
+}
+.count-data p:last-of-type {
+	font-size: 12px;
+	color: #888;
+}
+.count-sort {
+	float: right;
+	width: 60px;
+	height: 45px;
+}
+.green {
+    background: #43b29d;
+}
+.count:nth-of-type(1) {
+    border-left: 3px solid #43b29d;
+}
+.blue {
+	background: #388ac1;
+}
+.count:nth-of-type(2) {
+    border-left: 3px solid #388ac1;
+}
+.red {
+	background: #cf4a36;
+}
+.count:nth-of-type(3) {
+	border-left: 3px solid #cf4a36;
+}
+.yellow {
+	background: #e2cd47;
+}
+.count:nth-of-type(4) {
+	border-left: 3px solid #e2cd47;
+}
+
+/*four-table*/
+.w-60 {
+	width: 60%;
+}
+.w-39 {
+	width: 39%;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.common {
+	height: 358px;
+	border-radius: 10px;
+}
+.caption {
+    width: 100%;
+    height: 40px;
+    padding-left: 30px;
+    background: #f4f5f6;
+    font: normal 14px/40px "Simhei";
+    color: #888;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.buy-wrap {
+	padding: 10px 20px 20px;
+}
+.buy-wrap nav li {
+    list-style: none;
+    float: left;
+    padding: 6px 24px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+.bg {
+	margin-left: 4px;
+	background: #ededf0;
+}
+.lastli {
+	border-bottom: 1px solid #ddd;
+}
+.buy-wrap nav li:first-of-type {
+	border: 1px solid #ddd;
+	border-bottom: none;
+}
+.all-buy {
+    padding: 36px;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+.all-buy td {
+	padding: 6px 18px;
+	border: 1px solid #eee;
+	font-size: 14px;
+}
+
+/*项目报表*/
+.detail-wrap {
+	padding: 10px 30px;
+	font-family: "Microsoft yahei";
+	font-size: 13px;
+}
+.detail-wrap table {
+	width: 100%;
+}
+.detail-wrap td {
+	padding-left: 10px;
+	border-bottom: 1px solid #eee;
+}
+.rborder {
+	width: 30%;
+	border-right: 1px solid #eee;
+}
+.detail-wrap tr:nth-of-type(1),
+.detail-wrap tr:nth-of-type(2) {
+	height: 50px;
+}
+.detail-wrap tr:last-of-type {
+	height: 140px;
+	vertical-align: top;
+}
+.detail-wrap h4 {
+	font: normal 13px "Simhei";
+	color: #888;
+}
+.protocol {
+	padding: 8px 0;
+}
+.protocol form input:first-child {
+	-moz-appearance: none; /*Firefox*/
+	-webkit-appearance: none; /*Safari Chrome*/
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+}
+.protocol form input:first-child:checked {
+	background: url(../img/yes.png) no-repeat -6px 3px;
+	background-color: #d5d6d5;
+}
+.protocol .to-submit {
+	float: right;
+	padding: 5px 14px;
+	background: #388ac1;
+	border-radius: 3px;
+	border: none;
+	color: #FFFAFA;
+	font-weight: 600;
+}
+
+/*calendar*/
+.last-table {
+	margin-bottom: 180px;
+}
+.calendar {
+	font-size: 13px;
+}
+.com-pad {
+    padding: 10px 20px;
+}
+.time-wrap select,
+.return {
+	float: left;
+	color: #888;
+	border: 1px solid #cacbcb;
+}
+.time-wrap select:first-of-type {
+	width: 22%;
+	height: 24px;
+}
+.time-wrap select:nth-of-type(2) {
+	width: 28%;
+	height: 24px;
+	margin-left: 1%;
+}
+.time-wrap select:nth-of-type(3) {
+	width: 27%;
+	height: 24px;
+	margin-left: 1%;
+}
+.return {
+	width: 20%;
+	height: 24px;
+	margin-left: 1%;
+	text-align: center;
+	line-height: 24px;
+}
+.return a {
+	color: #888;
+}
+.nowm table {
+	margin-top: 10px;
+    width: 100%;
+}
+.nowm th {
+	font-weight: 500;
+	color: #484848;
+}
+.nowm td {
+	width: 14.28%;
+	text-align: center;
+}
+.nowm tr {
+	height: 42px;
+}
+.nowm .blank {
+	height: 4px;
+	width: 100%;
+}
+.nowm tr:first-of-type {
+	height: 30px;
+	border-top: 1px solid #9fc8e8;
+	border-bottom: 2px solid #eee;
+}
+.keyday {
+	color: #cd3539;
+}
+.orange {
+	border: 1px solid #D2691E;
+}
+.nowm td:hover {
+	border: 1px solid #D2691E;
+}
+
+/*cars*/
+.car-wrap {
+	font-size: 12px;
+	padding: 20px 40px;
+}
+.car-wrap table {
+	width: 100%;
+}
+.car-wrap tr {
+	height: 25px;
+}
+.car-wrap table td,
+.car-wrap table th {
+    border: 1px solid #cacbcb;
+}
+.car-wrap table th {
+	font-weight: 500;
+	font-size: 14px;
+}
+.car-wrap tr td:first-of-type {
+	width: 14%;
+	text-align: center;
+}
+.car-wrap tr td:nth-of-type(2) {
+	width: 18%;
+	text-align: center;
+}
+.car-wrap tr td:nth-of-type(3) {
+	width: 68%;
+	padding-left: 30px;
+}
+.car-wrap tr th:nth-of-type(3) {
+	padding-left: 30px;
+	text-align: left;
+}
+.car-wrap span {
+	float: left;
+}
+.sameh {
+	height: 4px;
+}
+.index {
+	float: left;
+	width: 70%;
+	margin: 5px 0 0 20px;
+	background: #ddd;
+}
+.long-1 {
+	width: 90%;
+	background: #B22222;
+}
+.long-2 {
+    width: 80%;
+    background: #DC143C; 
+}
+.long-3 {
+	width: 70%;
+	background: #C71585;
+}
+.long-4 {
+	width: 60%;
+	background: #D2691E;
+}
+.long-5 {
+	width: 55%;
+	background: #F08080;
+}
+.long-6 {
+	width: 50%;
+	background: #6495ED;
+}
+.long-7 {
+	width: 45%;
+	background: #483D8B;
+}
+.long-8 {
+	width: 40%;
+	background: #BDB76B;
+}
+.long-9 {
+	width: 30%;
+	background: #F0E68C;
+}
+.long-10 {
+	width: 20%;
+	background: #B0C4DE;
 }
