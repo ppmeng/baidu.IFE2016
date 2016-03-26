@@ -24,6 +24,8 @@ a {
 }
 .bg-white {
 	background: #fff;
+	border-right: 1px solid #dddfe1;
+	border-bottom: 1px solid #dddfe1;
 }
 table {
 	border-collapse: collapse;
@@ -122,7 +124,11 @@ header {
 .ff-wrap {
 	height: 70px;
 	margin: 20px 0 0 50px;
+	padding-top: 15px;
 	opacity: 0.8;
+}
+.ff-wrap {
+	opacity: 1;
 }
 .ff-wrap span {
 	font-size: 13px;
@@ -130,6 +136,7 @@ header {
 .ff-wrap .favorate,
 .ff-wrap .fans {
 	float: left;
+	cursor: pointer;
 }
 .ff-wrap .favorate {
 	padding: 0 28px 0 10px;
@@ -144,6 +151,10 @@ header {
 	list-style: none;
 	line-height: 2.5;
 	padding-left: 40px;
+}
+.main-list li:hover {
+	background: #383d4e;
+	opacity: 1;
 }
 .main-list a {
 	color: #fff;
@@ -196,6 +207,7 @@ header {
 	margin-bottom: 20px;
 	color: #888;
 	line-height: 30px;
+	border-bottom: 1px solid #dddfe1;
 }
 .nav-wrap a {
 	font-size: 14px;
@@ -213,13 +225,19 @@ header {
 /*查询部分*/
 .inquiry-wrap {
 	padding: 10px 0;
+	font-size: 12px;
+	color: #888;
+	border-radius: 4px;
 }
 
 .form-margin {
-    margin: 3px 5px;
+    margin: 3px 12px;
 }
 .select-box {
 	padding: 3px 5px;
+	font: 12px "Microsoft yahei";
+	color: #484848;
+	cursor: pointer;
 	-moz-appearance: none; /*Firefox*/
 	-webkit-appearance: none; /*Safari Chrome*/
 }
@@ -251,7 +269,7 @@ header {
 }
 .inquiry-bs a span {
     position: relative;
-    top: -16px;
+    top: -18px;
     font-size: 12px;
     color: #fff;
 }
@@ -264,7 +282,8 @@ header {
     border-radius: 4px;
     border: none;
     color: #fff;
-    background: #388ac1;	
+    background: #388ac1;
+    cursor: pointer;	
 }
 
 /*历史查询部分*/
@@ -276,14 +295,25 @@ header {
 .time,
 .hist-inq {
 	float: left;
-	height: 64px;
+	height: 68px;
 	margin-left: 0.6%;
 	text-align: center;
 	line-height: 26px;
+	cursor: pointer;
+	border-radius: 4px;
 }
 .time {
+	font-size: 14px;
+	color: #484848;
 	width: 12%;
 	padding-top: 6px;
+	border-top: 4px solid #fff;
+}
+.time-now {
+    border-top: 4px solid #388ac1;
+}
+.time:hover {
+	border-top: 4px solid #388ac1;
 }
 .time span:first-of-type {
 	font-size: 18px;
@@ -295,7 +325,7 @@ header {
 }
 .front,
 .end {
-	padding-top: 20px;
+	padding-top: 25px;
 	width: 4%;
 }
 .hist-inq {
@@ -304,7 +334,9 @@ header {
 }
 .hist-inq p {
 	float: right;
-	margin-right: 10px;
+	margin-right: 18px;
+	font-size: 14px;
+	color: #484848;
 }
 .hist-inq img {
    margin-top: 14px;
@@ -383,7 +415,7 @@ header {
 }
 .common {
 	height: 358px;
-	border-radius: 10px;
+	border-radius: 6px;
 }
 .caption {
     width: 100%;
@@ -392,40 +424,69 @@ header {
     background: #f4f5f6;
     font: normal 14px/40px "Simhei";
     color: #888;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
 }
-.buy-wrap {
-	padding: 10px 20px 20px;
+
+.material {
+	position: relative;
+	font-size: 12px;
+	color: #484848;
 }
-.buy-wrap nav li {
-    list-style: none;
+.buy-tab input {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+.buy-tab li {
+	list-style: none;
     float: left;
-    padding: 6px 24px;
-    font-size: 14px;
-    border-radius: 4px;
 }
-.bg {
-	margin-left: 4px;
+.buy-tab label {
+	display: block;
+	width: 84px;
+	height: 27px;
+	text-align: center;
+	line-height: 27px;
 	background: #ededf0;
+	cursor: pointer;
 }
-.lastli {
-	border-bottom: 1px solid #ddd;
+.now-pos {
+	margin-left: 8%;
 }
-.buy-wrap nav li:first-of-type {
-	border: 1px solid #ddd;
+.buy-tab ul li:nth-of-type(2),
+.buy-tab ul li:nth-of-type(3),
+.buy-tab ul li:nth-of-type(4),
+.buy-tab ul li:nth-of-type(5) {
+	margin-left: 5px;
+}
+[class*="allbuy"] {
+	display: none;
+}
+[class*="allbuy"] table {
+	width: 100%;
+	text-align: center;
+	line-height: 30px;
+}
+[class*="allbuy"] table td {
+	border: 1px solid #cacbcb;
+}
+[id^="pro"]:checked~[class^="allbuy"] {
+	display: block;
+	position: absolute;
+	width: 84%;
+	border: 1px solid #cacbcb;
+	border-radius: 5px;
+	padding: 28px 40px 30px;
+	left: 8%;
+	top: 80px;
+}
+[id^="pro"]:checked~label {
+	position: relative;
+	z-index: 1;
+	border: 1px solid #cacbcb;
 	border-bottom: none;
+	background: #fff;
+	height: 28px;
 }
-.all-buy {
-    padding: 36px;
-    border: 1px solid #ddd;
-    border-top: none;
-}
-.all-buy td {
-	padding: 6px 18px;
-	border: 1px solid #eee;
-	font-size: 14px;
-}
+
 
 /*项目报表*/
 .detail-wrap {
@@ -465,6 +526,9 @@ header {
 	width: 14px;
 	height: 14px;
 	cursor: pointer;
+	border: 1px solid #ddd;
+	background-color: #d5d6d5;
+	margin-right: 6px;
 }
 .protocol form input:first-child:checked {
 	background: url(../img/yes.png) no-repeat -6px 3px;
@@ -564,6 +628,9 @@ header {
 }
 .car-wrap tr {
 	height: 25px;
+}
+.car-wrap tr:hover {
+   background: #f4f5f6;
 }
 .car-wrap table td,
 .car-wrap table th {
