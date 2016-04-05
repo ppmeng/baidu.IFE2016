@@ -1,0 +1,72 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    font-family: "Microsoft YaHei", Arial;
+}
+
+/*可复用样式*/
+.clearfix:after{
+    content: ".";
+    height: 0;
+    display: block;
+    visibility: hidden;
+    overflow: hidden;
+    clear: both;
+}
+.clearfix {
+	zoom: 1;
+}
+img {
+	display: block;
+	/*可替换下面两种方法*/
+	/*设置容器内字体大小为0*/
+	/*vertical-align: top;*/
+	width: 80px;
+	height: 80px;
+	margin-bottom: 20px;
+	border: 1px solid #999;
+}
+.bg-white {
+	background: #fff;
+}
+.com-padding {
+	padding : 20px;
+}
+.com-border {
+	border: 1px solid #999;
+}
+
+/*其它样式*/
+.container {
+	min-width: 800px;
+	margin: 20px;
+	background: #eee;
+	/*不加clearfix时overflow: hidden;*/
+}
+.left-box {
+	position: relative;
+	float: left;
+	width: 200px;
+}
+.left-box span {
+    position: absolute;
+    left: 120px;
+    top: 20px;
+    width: 60px;
+    font-size: 14px;
+    background: #F5F5F5;
+}
+.right-box {
+	float: right;
+	width: 120px;
+}
+.middle-box {
+    margin: 0 140px 0 220px ;
+}
+.left-box img,
+.right-box img:last-child {
+	margin-bottom: 0;
+}

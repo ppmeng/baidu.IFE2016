@@ -1,0 +1,196 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+    line-height: 1.8;
+	font-family: "Microsoft YaHei", Arial, sans-serif;
+}
+body {
+	min-width: 980px;
+	background: #e2e2e2;
+}
+p {
+	font-size: 15px;
+}
+
+/*header*/
+#header-wrap {
+    width: 100%;
+    height: 80px;
+    padding: 0 30px;
+    background: #484848;
+}
+#header-wrap h1 {
+	float: left;
+	font-size: 40px;
+	color: #fff;
+	font-family: cursive;
+}
+#header-wrap li {
+	float: left;
+	width: 80px;
+	margin-left: 30px;
+}
+#header-wrap ul {
+	float: right;
+}
+#header-wrap h1,
+#header-wrap li {
+	line-height: 80px;
+}
+#header-wrap a {
+	text-decoration: none;
+	color: #fff;
+}
+#header-wrap .clicked {
+	color: #888;
+}
+
+/*中间部分*/
+.artical-box, 
+.sidebar {
+	margin: 20px;
+	padding: 30px 20px;
+	background: #fff;
+	border-style: outset;
+}
+.artical-box h3 {
+    color: #888;
+}
+.artical-info {
+	font-size: 13px;
+	color: #888;
+}
+.artical-box p {
+    text-indent: 2em;
+}
+.list1 {
+    text-indent: 2em;
+    list-style: none;	
+}
+
+/*图片*/
+.img-wrap figure {
+	width: 140px;
+	margin: 10px 0 0 50px;
+	padding: 10px;
+	border: 1px solid #999;
+}
+.img-wrap img {
+	width: 120px;
+	height: 100px;
+}
+figcaption {
+	text-align: center;
+}
+
+/*表格*/
+.ol-list li {
+	margin-left: 3em;
+}
+.tab1 {
+	width: 100%;
+	border-collapse:collapse;
+    text-indent: 1em;
+}
+.td-box td,
+.td-box th {
+	border: 1px solid #e2e2e2;
+	text-align: left;
+}
+.tab1 th {
+	color: #fff;
+	background: #484848;
+}
+.tab1 tr:last-child {
+   background: #888;
+}
+
+/*侧栏*/
+/*侧栏样式复用部分*/
+.sidebar {
+	padding: 20px;
+}
+.sidebar-heading h2 {
+    float: left;
+    padding-left: 20px;
+    border-left: 5px solid #e2e2e2;
+    line-height: 50px;
+}
+
+/*下面是两种方法*/
+/*使用display: table;将样式和结构分开*/
+
+.form-wrap {
+	clear: both;
+}
+.main-info {
+	display: table;
+	width: 95%;
+	margin: 0 auto;
+}
+.tablerow {
+	display: table-row;
+}
+.tablerow p {
+	display: table-cell;
+	padding: 6px;
+}
+.tablerow p:first-child {
+	width: 30%;
+	vertical-align: top;
+	text-align: right;
+}
+.hint {
+	color: #888;
+}
+.tablerow textarea {
+	width: 100%;
+	height: 80px;
+}
+.submit-wrap {
+    width: 100%;
+    font-size: 17px;
+    height: 30px;
+    border-radius: 10px;
+    color: #fff;
+    background: #6495ED;
+}
+
+/*直接使用table结构*/
+/*
+.sidebar-tab {
+	width: 95%;
+	margin: 0 auto
+}
+.sidebar-tab td:first-child {
+	float: right;
+}
+.sidebar-tab td {
+	padding: 5px;
+}
+.sidebar-tab .hint {
+	color: #888;
+}
+.sidebar-tab textarea {
+	width: 100%;
+	height: 80px;
+}
+.submit-wrap {
+	width: 100%;
+	height: 30px;
+	border-radius: 10px;
+	color: #fff;
+	background: #6495ED;
+}
+*/
+#copyright {
+	width: 100%;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	color: #fff;
+	background:#484848;
+}
