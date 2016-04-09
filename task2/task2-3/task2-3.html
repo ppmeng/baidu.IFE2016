@@ -29,11 +29,14 @@
 	 	*/
 	 	var data = new Array();
 		function getData() {
+            if (!document.getElementById("source") || !document.getElementsByTagName("li") || !document.getElementsByTagName("b")) {
+                return false;
+            }
 		    var source = document.getElementById("source").getElementsByTagName("li");
             for (var i = 0; i < source.length; i++) {
 		    	var city = source[i].innerHTML.split("空气")[0];
 		    	var num = source[i].getElementsByTagName("b")[0].innerHTML;
-		    	data.push([city, num]);
+		    	data[i] = ([city, num]); //保证每次点击button后得到的data一致，没有增加
 		    }
 			return data;
 		}
@@ -45,7 +48,7 @@
 		 */
 		function sortAqiData(data) {
             data.sort(function (a, b) {
-            	         return b[1] - a[1];
+            	         return a[1] - b[1];
             	     });
             return data;
 		}
@@ -56,13 +59,13 @@
 		 * 格式见ul中的注释的部分
 		 */
 		function render(data) {
-            var resort = document.getElementById("resort");
-            var resort_item = "";
+            if (!document.getElementById("resort")) return false;
+            var resort_item = [];
             for (var i = 0; i < data.length; i++) {
             	var input_str = transfer(i + 1);
-                resort_item += "<li>第" + input_str + "名：" + data[i][0] + "空气质量：" + "<b>" + data[i][1] + "</b></li>";
+                resort_item += "<li>第" + input_str + "名：" + data[i][0] + "空气质量：<b>" + data[i][1] + "</b></li>";
             }
-            resort.innerHTML = resort_item;
+            document.getElementById("resort").innerHTML = resort_item;
 		}
         
         function transfer(num) {
@@ -82,6 +85,8 @@
 		  var aqiData = getData();
 		  aqiData = sortAqiData(aqiData);
 		  render(aqiData);
+          //测试alert(data);
+          //document.getElementById("sort-btn").disabled = true;
 		}
 
 
@@ -89,6 +94,7 @@
             // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
             var button = document.getElementById("sort-btn");
             button.onclick = btnHandle;
+
 		}
         init();
 	</script>
