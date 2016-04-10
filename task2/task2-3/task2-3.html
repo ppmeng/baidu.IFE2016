@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>IFE JavaScript Task 03</title>
+	<title>任务十五：零基础JavaScript编码（三）</title>
 </head>
 <body>
 	<ul id="source">
 		<li>北京空气质量：<b>90</b></li>
-        <li>上海空气质量：<b>70</b></li>
+    	<li>上海空气质量：<b>70</b></li>
     	<li>天津空气质量：<b>80</b></li>
     	<li>广州空气质量：<b>50</b></li>
     	<li>深圳空气质量：<b>40</b></li>
@@ -15,24 +15,88 @@
     	<li>成都空气质量：<b>90</b></li>
     </ul>
     <ul id="resort">
-    	 <!-- 
+    	<!--
     	<li>第一名：北京空气质量：<b>90</b></li>
-    	<li>第二名：北京空气质量：<b>90</b></li>
-    	<li>第三名：北京空气质量：<b>90</b></li>
-     	-->
+    	-->
     </ul>
     <button id="sort-btn">排序</button>
+    
     <script type="text/javascript">
-        var data = new Array();
-        var source = document.getElementById("source");
-        var allli = source.getElementsByTagName("li");
+	    /**
+	    * getData方法
+	 	* 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+	 	* 返回一个数组，格式见函数中示例
+	 	*/
+	 	var data = new Array();
+		function getData() {
+            if (!document.getElementById("source") || !document.getElementsByTagName("li") || !document.getElementsByTagName("b")) {
+                return false;
+            }
+		    var source = document.getElementById("source").getElementsByTagName("li");
+            for (var i = 0; i < source.length; i++) {
+		    	var city = source[i].innerHTML.split("空气")[0];
+		    	var num = source[i].getElementsByTagName("b")[0].innerHTML;
+		    	data[i] = ([city, num]); //保证每次点击button后得到的data一致，没有增加
+		    }
+			return data;
+		}
 
-        for (var i = 0; i < allli.length; i++) {
-        	document.write(allli[i].firstChild.value);
-    	    data[i][0] = allli[i].firstChild.value;
-    	    document.write(data);
-    }
-    </script>
+		/**
+		 * sortAqiData
+		 * 按空气质量对data进行从小到大的排序
+		 * 返回一个排序后的数组
+		 */
+		function sortAqiData(data) {
+            data.sort(function (a, b) {
+            	         return a[1] - b[1];
+            	     });
+            return data;
+		}
 
+		/**
+		 * render
+		 * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+		 * 格式见ul中的注释的部分
+		 */
+		function render(data) {
+            if (!document.getElementById("resort")) return false;
+            var resort_item = [];
+            for (var i = 0; i < data.length; i++) {
+            	var input_str = transfer(i + 1);
+                resort_item += "<li>第" + input_str + "名：" + data[i][0] + "空气质量：<b>" + data[i][1] + "</b></li>";
+            }
+            document.getElementById("resort").innerHTML = resort_item;
+		}
+        
+        function transfer(num) {
+            var unit = ["", "十", "百", "千", "万", "十", "百", "千", "亿"];
+            var chNum = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"];
+            var input = String(num);
+            var input_str = "";
+            for (var i = 0; i < input.length; i++) {
+            	var a = chNum[input[i]];
+            	var b = unit[input.length - i - 1];
+            	input_str += a + b;
+            }
+            return input_str;
+        }
+
+		function btnHandle() {
+		  var aqiData = getData();
+		  aqiData = sortAqiData(aqiData);
+		  render(aqiData);
+          //测试alert(data);
+          //document.getElementById("sort-btn").disabled = true;
+		}
+
+
+		function init() {
+            // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
+            var button = document.getElementById("sort-btn");
+            button.onclick = btnHandle;
+
+		}
+        init();
+	</script>
 </body>
 </html>
