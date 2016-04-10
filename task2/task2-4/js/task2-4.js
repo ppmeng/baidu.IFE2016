@@ -1,53 +1,55 @@
-/**
- * aqiData，存储用户输入的空气指数数据
- * 示例格式：
- * aqiData = {
- *    "北京": 90,
- *    "上海": 40
- * };
- */
+//初始化
 var aqiData = {};
-var aqi_city = document.getElementById("aqi-city-input");
-var aqi_value = document.getElementById("aqi-value-input");
-/**
- * 从用户输入中获取数据，向aqiData中增加一条数据
- * 然后渲染aqi-list列表，增加新增的数据
- */
+
+//按照指定的格式存储并完成输入验证
 function addAqiData() {
-    var city = aqi_city.value.trim();
-    var values = aqi_value.value.trim();
+    var city = document.getElementById("aqi-city-input").value.trim();
+    var values = document.getElementById("aqi-value-input").value.trim();
     if (!city || !values) {
-    	alert("输入不能为空");
-    	return;
+        alert("输入不能为空");
+        return false;
     }
     if (!city.match(/^[A-Za-z\u4E00-\u9FA5]+$/)) {
-    	alert("城市名必须为中英文字符");
-    	return;
+        alert("城市名必须为中英文字符");
+        return false;
     }
     if (!values.match(/\d+/g)) {
-    	alert("空气质量指数必须为整数");
-    	return;
+        alert("空气质量指数必须为整数");
+        return false;
     }
     aqiData[city] = values;
 }
 
 //渲染aqi-table表格
 function renderAqiList() {
-    var aqiList = document.getElementById("aqi-table");
-    aqiList.innerHTML = "<tr><td>城市</td><td>空气质量</td><td>操作</td></tr>";
+    var aqi_table = document.getElementById("aqi-table");
+    aqi_table.innerHTML = "";
     for (var city in aqiData) {
-       	aqiList.innerHTML += "<tr><td>" + city + "</td><td>" + aqiData[city]
-       	                      + "</td><td><button>删除</button></td></tr>";
+        if (aqi_table.childNodes.length === 0) {
+            aqi_table.innerHTML = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
+        }
+        var list_tr = document.createElement("tr");
+        var citystr = document.createElement("td");
+        var citystr_text = document.createTextNode(city);
+        citystr.appendChild(citystr_text);
+        var valuestr = document.createElement("td");
+        valuestr.innerHTML = aqiData[city];
+        var button = document.createElement("td");
+        button.innerHTML = "<button>删除</button>";
+        list_tr.appendChild(citystr);
+        list_tr.appendChild(valuestr);
+        list_tr.appendChild(button);
+        aqi_table.appendChild(list_tr);
     }
 }
 
 function addBtnHandle() {
-	addAqiData();
-	renderAqiList();
+    addAqiData();
+    renderAqiList();
 }
 
-function delBtnHandle(e) {
-	var clicktr = e.parentNode.parentNode;;
+function delBtnHandle(button) {
+    var clicktr = button.parentNode.parentNode;
     var city = clicktr.childNodes[0].innerHTML;
     delete aqiData[city];
     renderAqiList();
@@ -55,15 +57,25 @@ function delBtnHandle(e) {
 
 function init() {
     //给add-btn绑定一个点击事件，点击时触发addBtnHandle函数
-	document.getElementById("add-btn").onclick = addBtnHandle;
+    document.getElementById("add-btn").onclick = addBtnHandle;
 
     // 给所有删除button绑定点击事件，点击时触发delBtnHandle函数
-	var aqiList = document.getElementById("aqi-table");
-    aqiList.addEventListener("click", function(e) {
-        if (e.target && e.target.nodeName === "BUTTON") {
-            delBtnHandle(e.target);
-        }
-    })
+    var aqi_table = document.getElementById("aqi-table");
+    if (aqi_table.addEventListener) {
+        aqi_table.addEventListener("click", function(event) {
+            if (event.target && event.target.nodeName.toLowerCase() === "button") {
+                delBtnHandle(event.target);
+            }
+        })
+    }
+    //兼容IE 8 之前版本
+    else if (aqi_table.attachEvent) {
+        aqi_table.attachEvent("onclick", function(event) {
+            if (event.target && event.target.nodeName.toLowerCase() === "button") {
+                delBtnHandle(event.target);
+            }
+        })
+    }
 }
 
 init();
