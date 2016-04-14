@@ -18,3 +18,4 @@ http://ife.baidu.com/task/all
 - task2-2:http://ppmeng.github.io/baidu.IFE2016/task2/task2-2/task2-2.html
 - task2-3:http://ppmeng.github.io/baidu.IFE2016/task2/task2-3/task2-3.html
 - task2-4:http://ppmeng.github.io/baidu.IFE2016/task2/task2-4/task2-4.html
+- task-18:http://ppmeng.github.io/baidu.IFE2016/task2/task-18/task-18.html
