@@ -9,17 +9,18 @@ function addEventHandler(elenode, event, handler) {
     	elenode["on" + event] = handler;
     }
 }
+window.onload = function() {
+    var leftIn = document.getElementById("leftIn");
+    var rightIn = document.getElementById("rightIn");
+    var leftOut = document.getElementById("leftOut");
+    var rightOut = document.getElementById("rightOut");
 
-var leftIn = document.getElementById("leftIn");
-var rightIn = document.getElementById("rightIn");
-var leftOut = document.getElementById("leftOut");
-var rightOut = document.getElementById("rightOut");
-
-//四种点击事件
-addEventHandler(leftIn, "click", LIhandler);
-addEventHandler(rightIn, "click", RIhandler);
-addEventHandler(leftOut, "click", LOhandler);
-addEventHandler(rightOut, "click", ROhandler);
+    //四种点击事件
+    addEventHandler(leftIn, "click", LIhandler);
+    addEventHandler(rightIn, "click", RIhandler);
+    addEventHandler(leftOut, "click", LOhandler);
+    addEventHandler(rightOut, "click", ROhandler);
+}
 
 var list = new Array();
 function LIhandler() {
