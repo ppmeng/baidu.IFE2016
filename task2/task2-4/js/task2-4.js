@@ -26,7 +26,18 @@ function renderAqiList() {
     aqi_table.innerHTML = "";
     for (var city in aqiData) {
         if (aqi_table.childNodes.length === 0) {
-            aqi_table.innerHTML = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
+            //下面写法不兼容IE
+            //aqi_table.innerHTML = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
+            var firtr = document.createElement("tr");
+            var firth = document.createElement("th");
+            firth.innerHTML = "城市";
+            var secth = document.createElement("th");
+            secth.innerHTML = "空气质量";
+            var thirdth = document.createElement("th");
+            firtr.appendChild(firth);
+            firtr.appendChild(secth);
+            firtr.appendChild(thirdth);
+            aqi_table.appendChild(firtr);
         }
         var list_tr = document.createElement("tr");
         var citystr = document.createElement("td");
@@ -71,8 +82,8 @@ function init() {
     //兼容IE 8 之前版本
     else if (aqi_table.attachEvent) {
         aqi_table.attachEvent("onclick", function(event) {
-            if (event.target && event.target.nodeName.toLowerCase() === "button") {
-                delBtnHandle(event.target);
+            if (event.srcElement && event.srcElement.nodeName.toLowerCase() === "button") {
+                delBtnHandle(event.srcElement);
             }
         })
     }
