@@ -25,8 +25,19 @@ function renderAqiList() {
     var aqi_table = document.getElementById("aqi-table");
     aqi_table.innerHTML = "";
     for (var city in aqiData) {
+        //IE不支持aqi_table.innerHTML = "<tr><th></th><th></th><th></th><tr></tr>"
         if (aqi_table.childNodes.length === 0) {
-            aqi_table.innerHTML = "<tr><th>城市</th><th>空气质量</th><th>操作</th></tr>";
+            var firtr = document.createElement("tr");
+            var firth = document.createElement("th");
+            firth.innerHTML = "城市";
+            var secth = document.createElement("th");
+            secth.innerHTML = "空气质量";
+            var thirdth = document.createElement("th");
+            thirdth.innerHTML = "操作";
+            firtr.appendChild(firth);
+            firtr.appendChild(secth);
+            firtr.appendChild(thirdth);
+            aqi_table.appendChild(firtr);
         }
         var list_tr = document.createElement("tr");
         var citystr = document.createElement("td");
@@ -62,17 +73,17 @@ function init() {
     // 给所有删除button绑定点击事件，点击时触发delBtnHandle函数
 	var aqi_table = document.getElementById("aqi-table");
     if (aqi_table.addEventListener) {
-        aqi_table.addEventListener("click", function(event) {
+        aqi_table.addEventListener("click", function() {
             if (event.target && event.target.nodeName.toLowerCase() === "button") {
                 delBtnHandle(event.target);
             }
         })
     }
-    //兼容IE 8 之前版本
+    //兼容IE,但是不知道为什么还是不兼容
     else if (aqi_table.attachEvent) {
-        aqi_table.attachEvent("onclick", function(event) {
-            if (event.target && event.target.nodeName.toLowerCase() === "button") {
-                delBtnHandle(event.target);
+        aqi_table.attachEvent("onclick", function() {
+            if (event.srcElement && event.srcElement.nodeName.toLowerCase() === "button") {
+                delBtnHandle(event.srcElement);
             }
         })
     }

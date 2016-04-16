@@ -95,7 +95,9 @@ function renderChart() {
   var color = "",text = "";
   for (var item in chartData) {
     color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-    text += '<div class="aqibar" title="'+item+"AQI:"+chartData[item]+'" style="height:'+chartData[item]+'px; background-color:'+color+'"></div>';
+    //不兼容IE
+    text += '<div class="aqibar" title="'+item+"AQI:"+chartData[item]+'" style="height:'+
+            chartData[item]+'px; background-color:'+color+'"></div>';
   }
   var aqiChartWrap = document.getElementsByClassName('aqi-chart-wrap')[0]; 
   aqiChartWrap.innerHTML = text;
