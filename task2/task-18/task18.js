@@ -86,10 +86,12 @@ function renderbox(list) {
         boxlist.innerHTML += text;*/
     }
     //点击时删除节点
-    for (var i = 0; i < boxlist.childNodes.length; i++) {
-        boxlist.childNodes[i].onclick = function() {
-            boxlist.removeChild(this);
-        }
+    boxlist.onclick = function() {
+        //call,改变this的指向，event.target不兼容IE,IE下换用event.srcElement
+        var nownode = event.target || event.srcElement;
+        var theindex = [].indexOf.call(nownode.parentNode.childNodes, nownode);
+        list.splice(theindex, 1);
+        renderbox(list);
     }
 }
 
