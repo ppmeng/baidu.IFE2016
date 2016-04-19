@@ -93,14 +93,22 @@ var pageState = {
 
 function renderChart() {  
   var color = "",text = "";
+  var aqiChartWrap = document.getElementsByClassName('aqi-chart-wrap')[0];
+  aqiChartWrap.innerHTML = ""; 
   for (var item in chartData) {
     color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-    //不兼容IE
-    text += '<div class="aqibar" title="'+item+"AQI:"+chartData[item]+'" style="height:'+
-            chartData[item]+'px; background-color:'+color+'"></div>';
+    //不兼容IE 
+    var aqibar = document.createElement("div");
+    aqibar.setAttribute("class", "aqibar");
+    var titletext = item + "AQI:" + chartData[item];
+    aqibar.setAttribute("title", titletext);
+    aqibar.style.height = chartData[item] + "px";
+    aqibar.style.backgroundColor = color;
+    aqiChartWrap.appendChild(aqibar);  
+    /*text += '<div class="aqibar" title="'+item+"AQI:"+chartData[item]+'" style="height:'+
+            chartData[item]+'px; background-color:'+color+'"></div>';*/
   }
-  var aqiChartWrap = document.getElementsByClassName('aqi-chart-wrap')[0]; 
-  aqiChartWrap.innerHTML = text;
+ // aqiChartWrap.innerHTML = text;
 }
 
 /**

@@ -86,13 +86,20 @@ function renderbox(list) {
         boxlist.innerHTML += text;*/
     }
     //点击时删除节点
-    boxlist.onclick = function() {
+    /*boxlist.onclick = function() {
         //call,改变this的指向，event.target不兼容IE,IE下换用event.srcElement
         var nownode = event.target || event.srcElement;
         var theindex = [].indexOf.call(nownode.parentNode.childNodes, nownode);
         list.splice(theindex, 1);
         renderbox(list);
-    }
+    }*/
+    addEventHandler(boxlist, "click", function() {
+        //call,改变this的指向，event.target不兼容IE,IE下换用event.srcElement
+        var nownode = event.target || event.srcElement;
+        var theindex = [].indexOf.call(nownode.parentNode.childNodes, nownode);
+        list.splice(theindex, 1);
+        nownode.parentNode.removeChild(nownode);
+    });
 }
 
 
