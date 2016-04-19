@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>task7</title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    article {
+        width: 800px;
+        margin: 30px auto;
+    }
+    fieldset {
+        border-radius: 4px;
+        width: 800px;
+        padding: 10px;
+    }
+    
+    .result {
+        width: 800px;
+        height: 500px;
+        border: 2px solid #999;
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin-top: 30px;
+        text-align: center;
+    }
+    #chart {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+        height: 450px;
+    }
+    .bar {
+        display: inline-block;
+        width: 10px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+    }
+    </style>
+</head>
+
+<body>
+    <article>
+        <fieldset>
+            <legend>表单输入</legend>
+            <input type="text" name="number" placeholder="输入10~100内的数">
+            <button id="left-in" value="左入">左侧输入</button>
+            <button id="right-in" value="右入">右侧输入</button>
+            <button class="delete" id="left-out" value="左出">左侧输出</button>
+            <button class="delete" id="right-out" value="右出">右侧输出</button>
+            <button id="clear" value="clear">清空</button>
+            <button id="random" value="随机产生">随机</button>
+            <select name="algorithm" id="algorithm">
+                <optgroup label="交换排序">
+                    <option value="bubbleSort">冒泡排序</option>
+                    <option value="quickSort">快速排序</option>
+                </optgroup>
+                <optgroup label="插入排序">
+                    <option value="binaryInsert">折半插入排序</option>
+                    <option value="directInsert">直接插入排序</option>
+                </optgroup>
+                <optgroup label="选择排序">
+                    <option value="simpleSelect">简单选择排序</option>
+                </optgroup>          
+            </select>
+            
+            <label for="interval">间隔</label>
+            <select name="speed" id="interval">
+                <option value="20">10</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+                <option value="200">200</option>
+            </select>
+            <button id="sort" value="排序">排序</button> 
+        </fieldset>
+        <div class="result">
+            <h2>排序算法可视化</h2>
+            <div id="chart"></div>
+        </div>
+    </article>
+
+    <script src="task19.js"></script>
+</body>
+
+</html>
