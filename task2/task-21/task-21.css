@@ -1,0 +1,41 @@
+* {
+	font-family: "microsoft yahei", sans-serif;
+}
+label {
+	margin-right: 10px;
+}
+#tag,
+#interest,
+#sure {
+	margin-top: 20px;
+	border-radius: 6px;
+}
+#tag {
+	width: 150px;
+	height: 26px;
+	border: 1px solid #999;
+}
+#interest {
+	width: 300px;
+	height: 80px;/*#FFCB8A*/
+}
+#tag-wrap,
+#interest-wrap {
+	width: 800px;
+	padding: 10px;
+}
+#tag-wrap span {
+	display: inline-block;
+	background: #78BCFB;
+	margin: 5px;
+	padding: 5px;
+}
+#interest-wrap {
+	padding: 10px;
+}
+#interest-wrap span {
+	display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	background: #FF9900;
+}
