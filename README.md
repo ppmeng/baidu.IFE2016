@@ -20,3 +20,5 @@ http://ife.baidu.com/task/all
 - task2-4:http://ppmeng.github.io/baidu.IFE2016/task2/task2-4/task2-4.html
 - task2-5:http://ppmeng.github.io/baidu.IFE2016/task2/task2-5/task2-5.html
 - task-18:http://ppmeng.github.io/baidu.IFE2016/task2/task-18/task-18.html
+- task-19:http://ppmeng.github.io/baidu.IFE2016/task2/task-19/task-19.html
+- task-21:http://ppmeng.github.io/baidu.IFE2016/task2/task-21/task-21.html
