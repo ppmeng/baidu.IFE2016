@@ -222,33 +222,41 @@ function simpleSelect(arr) {
 }
 
 function quickSort(arr) {
-    sort = function (left, right, sortlist) {
-        if (left >= right) return;
-        var idx = sort_partition(left, right, sortlist);
-        if (left < idx - 1) {
-            sort(left, idx - 1,sortlist);
-        }
-        if (idx < right) {
-            sort(idx + 1, right,sortlist);
+    if (arr.length <= 1) {
+        return arr;
+    }
+    var sort = function (arr, left, right) {
+        if (left < right) {
+            var stop = recurse(arr, left, right);
+            sort(arr, left, stop - 1);
+            sort(arr, stop + 1, right);
         }
     }
-    sort(0, arr.length-1, arr);
-}
-function sort_partition(left, right, data) {
-    var p = data[left];
-    while (left < right) {
-        while (left < right && data[right] >= p) {
-            right--;
+    sort(arr, 0, arr.length - 1);
+
+    function recurse(arr, left, right) {
+        var temp = arr[left];
+        while(left != right) {
+            while (left < right && arr[right] >= temp) {
+                right--;
+            }
+            if (left < right) {
+                arr[left] = arr[right];
+                left++;
+            }
+            while (left < right && arr[left] <= temp) {
+                left++;
+            }
+            if (left < right) {
+                arr[right] = arr[left];
+                right--;
+            }
         }
-        data[left] = data[right];
-        while (left < right && data[left] <= p) {
-            left++;
-        }
-        data[right] = data[left];
+        arr[left] = temp;
+        console.log(arr);
+        snapshots.push(JSON.parse(JSON.stringify(arr)));
+        return left;
     }
-    data[left] = p
-    snapshots.push(JSON.parse(JSON.stringify(data)));
-    return left;
 }
 
 //渲染数组
