@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>多叉树遍历</title>
+	<link rel="stylesheet" type="text/css" href="task-23.css">
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>多叉树遍历（DFS、BFS）</legend>
+            <input id="DFS" type="button" value="深度优先搜索">
+            <input id="BFS" type="button" value="广度优先搜索">
+            <div id="search">
+                <input type="text" placeholder="输入要查询的节点名称">
+                <select id="select">
+                	<option>深度优先搜索</option>
+                	<option>广度优先搜索</option>
+                </select>
+                <input id="submit" type="submit" value="查询">
+            </div>
+        </fieldset>
+    </form>   
+    <div class="root">Super
+        <div class="child-1">Car
+            <div class="child-2">Apple
+                <div class="child-3">Poor</div>
+                <div class="child-3">Pig</div>
+                <div class="child-3">Cola</div>
+            </div>
+            <div class="child-2">Phone</div>
+            <div class="child-2">School
+                <div class="child-3">Book</div>
+                <div class="child-3">Pen</div>
+            </div>
+        </div>
+        <div class="child-1">Note
+            <div class="child-2">Human
+                <div class="child-3">Code</div>
+                <div class="child-3">Operate</div>
+                <div class="child-3">Man</div>
+            </div>
+            <div class="child-2">Animal
+                <div class="child-3">Dog
+                    <div class="child-4">Cat</div>
+                </div>
+                <div class="child-3">Goat</div>
+            </div>
+        </div>
+        <div class="child-1">Fish</div>
+    </div>
+	<script src="task-23.js"></script>
+</body>
+</html>
