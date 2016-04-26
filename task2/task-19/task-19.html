@@ -17,7 +17,7 @@
     fieldset {
         border-radius: 4px;
         width: 800px;
-        padding: 10px;
+        padding: 8px;
     }
     
     .result {
@@ -40,7 +40,13 @@
         display: inline-block;
         width: 10px;
         margin-right: 5px;
-        border: 1px solid #ccc;
+        background-color: #ccc;
+    }
+    .red {
+        background: red;
+    }
+    .blue {
+        background: blue;
     }
     </style>
 </head>
@@ -69,13 +75,12 @@
                     <option value="simpleSelect">简单选择排序</option>
                 </optgroup>          
             </select>
-            
             <label for="interval">间隔</label>
             <select name="speed" id="interval">
                 <option value="20">10</option>
                 <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
+                <option value="100">200</option>
+                <option value="200">3000</option>
             </select>
             <button id="sort" value="排序">排序</button> 
         </fieldset>

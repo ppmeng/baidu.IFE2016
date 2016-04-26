@@ -3,7 +3,7 @@ function $(ele) {
  }
  var queue = [];
  var snapshots = []; //快照集合
- //var interval = $("#interval").value;
+ var inAnimation = false; //若正在渲染则为true，否则为false
 
 $("#chart").addEventListener("click", function(e) {
     var node = e.target;
@@ -14,21 +14,18 @@ $("#chart").addEventListener("click", function(e) {
     }
 });
 
-function initData(number) {
+
+function init() {
     queue = [];
-    for (var i = 0; i < number; i++) {
+    for (var i = 0; i < 50; i++) {
         queue.push(Math.floor(Math.random() * 90 + 10));
     }
     return queue;
 }
 
-function init() {
-    initData(50);
-    render();
-}
-
 window.onload = function() {
     init();
+    render();
 }
 
 function getInputValue() {
@@ -66,16 +63,11 @@ function changeAlgorithm() {
     }
 }
 
-function interval() {
-    var speed = parseInt($("#interval").value);
-    return speed;
-}
-
 $("#sort").onclick = function() {
     if (queue.length == 0) return alert("队列为空");
     changeAlgorithm();
     var sort = $("#sort");
-    var speed = interval();
+    var speed = parseInt($("#interval").value);
     sort.timer = setInterval(paint, speed); //定时绘制,属性
     function paint() {
         var snapshot = snapshots.shift() || [];
@@ -121,7 +113,7 @@ $("#sort").onclick = function() {
  }
  //随机产生
  $("#random").onclick = function() {
-     initData(50);
+     init();
      render();
  }
  //清空
@@ -143,6 +135,7 @@ function bubbleSort(arr) {
     var temp;
     for (var i = arr.length; i >= 2; i--) {
         for (var j = 0; j < i; j++) {
+            //renderRangeColor(j, i);
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j + 1];
                 arr[j + 1] = arr[j];
@@ -222,42 +215,58 @@ function simpleSelect(arr) {
 }
 
 function quickSort(arr) {
-    sort = function (left, right, sortlist) {
-        if (left >= right) return;
-        var idx = sort_partition(left, right, sortlist);
-        if (left < idx - 1) {
-            sort(left, idx - 1,sortlist);
-        }
-        if (idx < right) {
-            sort(idx + 1, right,sortlist);
+    if (arr.length <= 1) {
+        return arr;
+    }
+    var sort = function (arr, left, right) {
+        if (left < right) {
+            var stop = recurse(arr, left, right);
+            sort(arr, left, stop - 1);
+            sort(arr, stop + 1, right);
         }
     }
-    sort(0, arr.length-1, arr);
-}
-function sort_partition(left, right, data) {
-    var p = data[left];
-    while (left < right) {
-        while (left < right && data[right] >= p) {
-            right--;
+    sort(arr, 0, arr.length - 1);
+
+    function recurse(arr, left, right) {
+        var temp = arr[left];
+        while(left != right) {
+            while (left < right && arr[right] >= temp) {
+                right--;
+            }
+            if (left < right) {
+                arr[left] = arr[right];
+                left++;
+            }
+            while (left < right && arr[left] <= temp) {
+                left++;
+            }
+            if (left < right) {
+                arr[right] = arr[left];
+                right--;
+            }
         }
-        data[left] = data[right];
-        while (left < right && data[left] <= p) {
-            left++;
-        }
-        data[right] = data[left];
+        arr[left] = temp;
+        console.log(arr);
+        snapshots.push(JSON.parse(JSON.stringify(arr)));
+        return left;
     }
-    data[left] = p
-    snapshots.push(JSON.parse(JSON.stringify(data)));
-    return left;
 }
 
 //渲染数组
 function render(arr) {
     var array = arr || queue;
     var content = array.map(function(v) {
-        var color = '#' + Math.ceil((v/100).toFixed(1) * 0xffffff).toString(16);
-        return "<div class='bar' title = "+v+" style='height:" + (v * 4) + "px; background-color:"+color+"'></div>";
+        return "<div class='bar' title = "+v+" style='height:" + (v * 4) + "px'></div>";
     }).join("");
     $("#chart").innerHTML = content;
 }
 
+function renderRangeColor(left, right) {
+    for (var i = left; i <= right; i++) {
+        $("#chart").childNodes[i].style.backgroundColor = "red";  
+    }
+}
+
+function renderChangeColor(i, j) {
+
+}
