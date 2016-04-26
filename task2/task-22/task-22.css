@@ -1,0 +1,68 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-family: "Microsoft Yahei", sans-serif;
+}
+
+fieldset {
+    width: 960px;
+    height: 60px;
+    margin: 20px auto 0;
+    border: 1px solid #999;
+}
+input {
+	margin: 8px 50px 0 0;
+	width: 100px;
+	height: 30px;
+	color: #fff;
+	border:none;
+	outline: none;
+	border-radius: 6px;
+	background: #999;
+	-webkit-transition: all .5s ease-in-out; /*Safari  Chrome*/
+	-moz-transition: all .5s ease-in-out; /*Firefox4*/
+	-o-transition: all .5s ease-in-out;  /*Opera*/
+	transition: all .5s ease-in-out;
+}
+input:hover {
+	cursor: pointer;
+	background-color: #ccc;
+}
+input:nth-of-type(1) {
+	margin-left: 80px;
+}
+h2 {
+	margin: 0 auto;
+}
+div {
+	background-color: #fff;
+}
+.root,
+.child-1,
+.child-2 {
+	display: flex;
+	display: -webkit-flex; /*safari*/
+	justify-content: space-between;
+	padding: 30px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /*Firefox*/
+	-webkit-box-sizing: border-box; /*safari*/
+}
+.root {
+	width: 980px;
+	height: 300px;
+	margin: 100px auto 10px;
+	border: 1px solid red;
+}
+.child-1 {
+	width: 445px;
+	border: 1px solid green;
+}
+.child-2 {
+	width: 177px;
+	border: 1px solid orange;
+}
+.child-3 {
+	width: 43px;
+	border: 1px solid blue;
+}
