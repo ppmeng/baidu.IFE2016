@@ -457,6 +457,7 @@ header {
 .buy-tab ul li:nth-of-type(5) {
 	margin-left: 5px;
 }
+/*class属性中包含allbuy子串的元素*/
 [class*="allbuy"] {
 	display: none;
 }
