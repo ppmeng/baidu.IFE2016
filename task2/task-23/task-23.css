@@ -19,15 +19,15 @@ legend {
 #DFS,
 #BFS {
 	padding: 6px 10px;
-	margin: 20px 0 0 20px;
-	border: none;
+	margin: 20px 0 0 30px;
 	-webkit-transition: all .5s ease-in-out; /*Safari  Chrome*/
 	-moz-transition: all .5s ease-in-out; /*Firefox4*/
 	-o-transition: all .5s ease-in-out; /*Opera*/
 	transition: all .5s ease-in-out;
 }
 #DFS:hover,
-#BFS:hover {
+#BFS:hover,
+#submit:hover {
     cursor: pointer;
     color: #fff;
     background-color: #ccc;
@@ -35,11 +35,29 @@ legend {
 #search {
 	display: inline-block;
 	padding: 10px 20px;
-	margin-left: 20px;
+	margin-left: 50px;
 	border: 1px dotted #999;
 }
 #search input:nth-of-type(1) {
     height: 30px;
+}
+#search select {
+	height: 30px;
+}
+
+#search #submit {
+	height: 30px;
+	width: 50px;
+	-webkit-transition: all .5s ease-in-out; /*Safari  Chrome*/
+	-moz-transition: all .5s ease-in-out; /*Firefox4*/
+	-o-transition: all .5s ease-in-out; /*Opera*/
+	transition: all .5s ease-in-out;
+}
+label:nth-of-type(1) {
+	margin-left: 80px;
+}
+label:nth-of-type(2) {
+	margin-left: 30px;
 }
 .root,
 .child-1,
@@ -57,10 +75,12 @@ legend {
 	height: 350px;
 	margin: 50px auto 0;
 	border: 1px solid green;
+	background-color: #fff;
 }
 .root div {
     flex-grow: 1;
     margin: 0 10px;
+    background-color: #fff;
 }
 .child-1 {	
 	border: 1px solid blue;
