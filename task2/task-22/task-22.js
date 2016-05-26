@@ -58,7 +58,7 @@ function levelOrder(node) {
 	}
 
 	while (queue.length != 0) {
-			var currentTree = queue.shift();
+		var currentTree = queue.shift();
 		for (var i = 0; i < currentTree.childNodes.length; i++) {
             if (currentTree.childNodes[i].nodeType == "1") {
 			    queue.push(currentTree.childNodes[i]);
