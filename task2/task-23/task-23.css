@@ -39,7 +39,7 @@ fieldset input {
 	margin-left: 20px;
 }
 #input {
-	width: 150px;
+	width: 250px;
 	height: 26px;
 }
 label:nth-of-type(1) {
@@ -51,7 +51,8 @@ label:nth-of-type(2) {
 .root,
 .child-1,
 .child-2,
-.child-3 {
+.child-3,
+.child-4 {
     display: flex;
     display: -webkit-flex;
     justify-content: space-around;

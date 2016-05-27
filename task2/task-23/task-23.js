@@ -1,3 +1,25 @@
+//复用函数以及变量
+var lock; //布尔值，表示是否正在遍历
+var choose = []; //标记选定的节点(用于添加和删除)
+
+function addEventHandler(ele, event, handler) {
+    if (ele.addEventListener) {
+        ele.addEventListener(event, handler, false); //false 事件在冒泡阶段执行
+    }else if (ele.attachEvent) { //早期IE等
+        ele.attachEvent("on" + event, handler);
+    }else {
+        ele["on" + event] = handler;
+    }
+}
+
+function clearColor(tree) {
+	var traversalResult = [];
+    traversalDF(tree, traversalResult);
+    traversalResult.forEach(function(ele) {
+    	ele.style.backgroundColor = "#fff";
+    })
+}
+
 /**
  * DFS深度优先搜索
  */
@@ -16,7 +38,7 @@ function traversalDF(node, traversalResult) {
 function traversalBF(node, traversalResult) {
     var index = 0;
     (function BFS(node, nodelist) {
-        if (node && node.nodeType == "1") {
+        if (node && node.nodeName.toLowerCase() == "div") { //根节点有兄弟节点<script>
             nodelist.push(node);
             BFS(node.nextElementSibling, nodelist);
             var node = nodelist[index++];
@@ -25,6 +47,29 @@ function traversalBF(node, traversalResult) {
     })(node, traversalResult);
 }
 
+/**
+ * 添加节点
+ */
+function insertNode(choose, input) {
+    for (var i = 0, len = choose.length; i < len; i++) {
+    	var divNode = document.createElement("div");
+        divNode.innerHTML = input;
+        divNode.style.border = "1px solid #888";
+    	choose[i].appendChild(divNode);
+    }
+}
+
+function deleteNode(nodes) {
+    if (nodes.length == 0) return false;
+    var length = nodes.length;
+    for (var i = 0; i < length; i++) {
+        nodes[i].parentNode.removeChild(nodes[i]);
+    }
+    return true;
+}
+/**
+ * 删除节点
+ */
 
 function $(ele) {
     return document.querySelector(ele);
@@ -32,58 +77,60 @@ function $(ele) {
 
 //渲染动画
 function animation(nodelist, input) {
-    lock = true;
+    lock = true; //遍历中
     var input = input || null;
-    //console.log(input);
     (function render() {
         var next = nodelist.shift();
-        if (next) {
-            alert(next.firstChild.nodeValue.replace("/(^\s*) | (\s*$)/g"), "");
-            next.style.backgroundColor = "blue";
+        //console.log(next.attributes); //注意和script和root为兄弟节点
+        if (next != null) {
+        	next.style.backgroundColor = "blue";
+            var currentNodevalue = next.firstChild.nodeValue.replace((/(^\s*)|(\s*$)/g), "") || "";
             setTimeout(function() {
-                if (!input || next.firstChild.nodeValue.replace(("/(^\s*)|(\s*$)/g"), "") !== input) {
-                    next.style.backgroundColor = "#fff";
-                    render();
+                if (input && currentNodevalue == input) {
+                	next.style.backgroundColor = "red";
+                    //return false; //若只想查询第一个指定文本的节点则直接返回
+                    
                 }else {
-                    next.style.backgroundColor = "red";
-                    return;
+                    next.style.backgroundColor = "#fff"; 
                 }
+                render();
             }, 500);
         }else {
-            lock = false;
+            lock = false; //遍历结束
         }
     })();
-}
-
-//复用函数以及变量
-var lock; //布尔值，表示是否正在遍历
-function addEventHandler(ele, event, handler) {
-    if (ele.addEventListener) {
-        ele.addEventListener(event, handler, false); //false 事件在冒泡阶段执行
-    }else if (ele.attachEvent) { //早期IE等
-        ele.attachEvent("on" + event, handler);
-    }else {
-        ele["on" + event] = handler;
-    }
 }
 
 function traverse(selectOperator) {
     var rootNode = $(".root");
     var input = document.getElementById("input").value;
-    console.log(input);
+    //console.log(input);
     traversalResult = [];
     if (selectOperator.id == "DFS") {
+    	clearColor($(".root"));
         traversalDF(rootNode, traversalResult);
         //console.log(traversalResult.length);
     }else if (selectOperator.id == "BFS") {
+    	clearColor($(".root"));
         traversalBF(rootNode, traversalResult);
-        //console.log(traversalResult.length);  //不知道为什么长度为21，多了一个
     }else if (selectOperator.id == "search") {
-        traversalDF(rootNode, traversalResult); //默认查询方式为DFS
+    	clearColor($(".root"));
+    	if (input) {
+            traversalDF(rootNode, traversalResult); //默认查询方式为DFS
+        }else {
+        	alert("请输入查询的节点内容");
+        }
     }else if (selectOperator.id == "insert") {
-
+    	if (!input) {
+    		if (confirm("您将要添加的节点内没有文本")) {
+                	insertNode(choose, input);
+            }
+        }
     }else if (selectOperator.id == "delete") {
-
+    	if (confirm("确定将选中节点以及其下子节点全部删除？")) {
+            deleteNode(choose);
+            choose = [];
+        }
     }
    animation(traversalResult, input);
 }
@@ -104,4 +151,18 @@ window.onload = function () {
             });
         })(i);
     }
+
+    addEventHandler($(".root"), "click", function(e) {
+        if (e.target || e.target.nodeName.toLowerCase() == "div") {
+        	//点击一次选定节点，点击两次取消
+        	if (!e.target.style.backgroundColor) {
+        	    e.target.style.backgroundColor = "#888";
+        	    choose.push(e.target);
+        	}else {
+                e.target.style.backgroundColor = "";
+                choose.splice(choose.indexOf(e.target), 1);               
+        	}
+        } 
+    });
+
 }
