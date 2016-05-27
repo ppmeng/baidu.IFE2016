@@ -1,0 +1,23 @@
+/**
+  *复用样式
+  */
+.box-size {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; /*Firefox*/
+	-webkit-box-sizing: border-box; /*Safari*/
+}
+
+form {
+	width: 650px;
+	margin: 0 auto;
+}
+#searchText {
+    margin-left: 30px;
+}
+
+#tree {
+	width: 646px;
+	margin: 0 auto;
+	padding: 20px 40px;
+	border: 2px groove threedface;
+}
