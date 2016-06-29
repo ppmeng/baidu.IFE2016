@@ -15,9 +15,102 @@ form {
     margin-left: 30px;
 }
 
-#tree {
-	width: 646px;
-	margin: 0 auto;
-	padding: 20px 40px;
+
+#treebox{
+	width: 604px;
+	margin: 10px auto;
+	padding: 0 20px;
 	border: 2px groove threedface;
+}
+#resalt {
+	height: 16px;
+	color: red;
+}
+.treeNode {
+	padding-left: 24px;
+	background-color: #fff;
+}
+
+h2 span.add {
+	margin-left: 20px;
+}
+
+.treelevel {
+	margin: 10px 0;
+}
+.treelevel span {
+	display: inline-block;
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.icon {
+	display: inline-block;
+	width: 40px;
+	height: 16px;
+}
+.icon>.folder, .icon>.file{
+    float: right;
+}
+.icon>.arrow-right, .icon>.arrow-down {
+	float: left;
+	margin-top: 4px;
+}
+.arrow-right {
+	margin: 3px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 5px 0 5px 10px;
+	border-color: transparent transparent transparent #888;
+	//margin-right: -10px;
+}
+.arrow-down {
+	margin: 3px;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 10px 5px 0 5px;
+	border-color: #888 transparent transparent transparent;
+}
+/*.arrow-empty {
+	width: 12px;
+	height: 16px;
+}*/
+
+.folder {
+	width: 24px;
+	height: 16px;
+	background: url("images/folder.png") 0 0 no-repeat;
+}
+.file {
+    width: 24px;
+	height: 16px;
+	background: url("images/file.png") 0 -1px no-repeat;
+}
+
+.treeNodeText {
+	margin-right: 20px;
+}
+
+.visible {
+	visibility: hidden;
+}
+.add {
+	width: 16px;
+	height: 16px;
+	background: url(images/add.png);
+}
+.delete {
+	width: 16px;
+	height: 16px;
+	margin-left: 8px;
+	background: url(images/delete.png);
+}
+.treelevel:hover >.add, .treelevel:hover>.delete{
+    visibility: visible;
+}
+
+.hidden {
+    display: none;
 }

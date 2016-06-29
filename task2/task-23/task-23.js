@@ -84,12 +84,15 @@ function animation(nodelist, input) {
         //console.log(next.attributes); //注意和script和root为兄弟节点
         if (next != null) {
         	next.style.backgroundColor = "blue";
-            var currentNodevalue = next.firstChild.nodeValue.replace((/(^\s*)|(\s*$)/g), "") || "";
+            //模糊查询，忽略所有空格以及大小写
+            var currentNodevalue = next.firstChild.nodeValue.replace(/\s+/g, "");
+            input = input.replace(/\s+/g, "");
+            var equal = (currentNodevalue.toLowerCase() == input.toLowerCase());
+
             setTimeout(function() {
-                if (input && currentNodevalue == input) {
+                if (equal) {
                 	next.style.backgroundColor = "red";
                     //return false; //若只想查询第一个指定文本的节点则直接返回
-                    
                 }else {
                     next.style.backgroundColor = "#fff"; 
                 }
@@ -122,9 +125,9 @@ function traverse(selectOperator) {
         }
     }else if (selectOperator.id == "insert") {
     	if (!input) {
-    		if (confirm("您将要添加的节点内没有文本")) {
-                	insertNode(choose, input);
-            }
+    		alert("请输入要插入的节点内容")
+        }else {
+            insertNode(choose, input);
         }
     }else if (selectOperator.id == "delete") {
     	if (confirm("确定将选中节点以及其下子节点全部删除？")) {
