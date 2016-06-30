@@ -121,6 +121,7 @@ TreeNode.prototype = {
         for (var i = 0; i < list.length; i++) {
             list[i].selfElement.className = list[i].selfElement.className.replace(/hidden/g, "");
         }
+        //this.selfElement.className = this.selfElement.className.replace(/hidden/g, "");
     },
 
 	isLeaf: function() {
@@ -190,14 +191,11 @@ TreeNode.prototype = {
 	//删除节点
     deleteSelf: function () {
         if (!this.isLeaf()) {
-        	if (confirm("点击确定将删除此文件夹以及内部所有文件")) {
-        		    for (var i = 0; i < this.childs.length; i++) {
-        		    this.childs[i].deleteSelf();
-        	    }
-        	}else {
-        		return false;
-        	}
+            for (var i = 0; i < this.childs.length; i++) {
+                this.childs[i].deleteSelf();
+            }
         }
+
         this.parent.selfElement.removeChild(this.selfElement);
         var index = this.parent.childs.indexOf(this);
         this.parent.childs.splice(index, 1);
@@ -249,35 +247,13 @@ treeRoot.childs[2].addChild("file", "JavaScript").addChild("file", "jQuery").add
  * 事件绑定
  */
 window.onload = function () {
-	//重命名
-	var allname = document.getElementsByClassName("treeNodeText"); 
-	for (var i = 0; i < allname.length; i++) {
-		addEventHandler(allname[i], "dblclick", function(e) {
-			var treenodetext = this;
-			var oldtext = treenodetext.innerHTML;
-            this.innerHTML = "<input type='text'>";
-            var input = treenodetext.getElementsByTagName("input")[0];
-            input.value = oldtext;
-            input.focus();
-            input.onblur = function () {
-            	var newtext = input.value;
-            	if (newtext.trim() === "" || newtext == oldtext) {
-            		treenodetext.innerHTML = oldtext;
-            	}else {
-            		treenodetext.innerHTML = newtext;
-            	}
-            	treenodetext.parentNode.parentNode.TreeNode.data = treenodetext.innerHTML; 
-            }
-        });
-	}
-	
 	//search
     addEventHandler(document.getElementById("search"), "click", function(e) {
         tree.search(document.getElementById("searchText").value);
     });
     //clear
     addEventHandler(document.getElementById("clear"), "click", function(e) {
-        document.getElementById("searchText").value = "";
+        //document.getElementById("searchText").value = "";
         tree.clear();
     });
     
@@ -288,18 +264,39 @@ window.onload = function () {
     	while (domNode.className.indexOf("treeNode") == -1) {
     		domNode = domNode.parentNode;
     	}
-
     	//add and delete
         if (target && target.className.indexOf("delete") !== -1) {
-            domNode.TreeNode.deleteSelf();
+            //提醒删除操作
+            var sureToDel;
+            if (domNode.TreeNode.childs.length == 0) {
+                sureToDel = confirm("确定删除这个文件节点么？");
+            }else {
+                sureToDel = confirm("确定删除这个文件夹节点么？里面还包含有其他文件哦");
+            }
+            //执行删除
+            if (sureToDel) {
+                domNode.TreeNode.deleteSelf(); 
+            }else {
+                return false;
+            } 
         }
         if (target && target.className.indexOf("add") !== -1) {
         	var type = prompt("新建一个新的文件夹?(默认新建文件夹，更改为file新建文件", "folder");
-        	if (type!== null) {
-        		domNode.TreeNode.addChild(type, prompt("请输入子结点的内容："));
-        	}
+            //确定是否要新建文件
+            if (type == null) {
+                return false;
+            }else {
+                type = type.trim();
+            }
+            //确定新建的文件信息
+        	if (type == "") {
+                alert("请输入要folder或者file新建文件夹或者新建文件");
+            }else if (type && ["folder", "file"].indexOf(type) == -1) {
+                alert("目前只支持folder和file两种形式，请再次确定并选择新建文件夹folder还是文件file");
+            }else {
+                domNode.TreeNode.addChild(type, prompt("请输入子结点的内容："));
+            }
         } 
-
     	//交替折叠和展开
     	if (target && target.className.indexOf("arrow-right") !== -1) {
         	target.className = target.className.replace(/arrow-right/g, "arrow-down");
@@ -307,6 +304,27 @@ window.onload = function () {
         }else if (target && target.className.indexOf("arrow-down") !== -1) {
         	target.className = target.className.replace(/arrow-down/g, "arrow-right");
         	domNode.TreeNode.toFold();
+        }
+    });
+    
+    //重命名文件夹名称和文件名称
+    addEventHandler(treeRoot.selfElement, "dblclick", function(e) {
+        var target = e.target || e.srcElement;
+        if (target && target.className.indexOf("treeNodeText") !== -1) {
+            var oldtext = target.innerHTML;
+            target.innerHTML = "<input type='text'>";
+            innerInput = target.getElementsByTagName("input")[0];
+            innerInput.value = oldtext;
+            innerInput.focus();
+            innerInput.onblur = function() {
+                var newtext = innerInput.value;
+                if (newtext.length == 0 || newtext.trim().length == 0) {
+                    target.innerHTML = oldtext;
+                }else {
+                    target.innerHTML = newtext;
+                }
+                target.parentNode.parentNode.TreeNode.data = target.innerHTML; 
+            }
         }
     });
 }
