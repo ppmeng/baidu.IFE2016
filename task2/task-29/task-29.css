@@ -1,0 +1,47 @@
+form {
+	margin: 80px 25% 0;
+	font-family: "SimHei", "Microsoft Yahei", "sans-serif";
+}
+
+.table-row {
+	display: table-row;
+}
+form label {
+	padding: 10px 20px;
+	font-size: 22px;
+	display: table-cell;
+	text-align: right;
+}
+p {
+	display: table-cell;
+	text-align: left;
+}
+
+label[for="name"]:before {
+	content: "*";
+    color: red;
+}
+input#name {
+	width: 300px;
+	height: 30px;
+	padding: 0 10px;
+	border-radius: 6px;
+	border: 2px solid #ccc;
+	outline: 0;
+	font: 14px "SimHei";
+}
+#name:focus, #name:hover {
+	border: 2px solid blue;
+}
+
+#submit {
+	width: 60px;
+	height: 34px;
+	border-radius: 6px;
+    border: none;
+    background-color: #2F79BA;
+    color: #fff;
+    font-size: 16px;
+}
+
+
