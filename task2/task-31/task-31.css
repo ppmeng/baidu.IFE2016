@@ -1,0 +1,58 @@
+form {
+	width: 600px;
+	margin: 100px auto;
+	padding: 50px 100px;
+	font: 18px/2em "Microsoft Yahei",sans-serif;
+}
+#status {
+	padding-left: 110px;
+}
+#for-student label, #for-not-student label {
+	display: inline-block;
+    width: 100px;
+    padding-right: 10px;
+    text-align: right;
+}
+label[for="student"] {
+	display: inline-block;
+	width: 156px;
+}
+input[type="radio"] {
+	display: none;
+}
+.icon {
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+    border:1px solid #999;
+    margin-right: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+input[type="radio"]:checked+label .icon,
+.icon:hover {
+	border: 6px solid #3496FE;
+	box-sizing: border-box;
+	box-shadow: 0 0 3px #3496FE;
+}
+#for-student  select {
+	padding: 5px 10px;
+	border-radius: 6px;
+}
+#city {
+	margin-right: 30px;
+	width: 120px;
+}
+#schools {
+	width: 220px;
+}
+#for-not-student input {
+	border: 1px solid rgb(169, 169, 169);
+	border-radius: 6px;
+	padding: 6px 10px;
+	width: 354px;
+}
+select, input {
+	outline: none;
+}
