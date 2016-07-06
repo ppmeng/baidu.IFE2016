@@ -1,0 +1,33 @@
+#verify-box {
+	display: table;
+	margin: 80px 0 0 80px;
+}
+.table-row {
+	height: 20px;
+    display: table-row;
+}
+.table-row label, .table-row input, .table-row span {
+	display: table-cell;
+}
+#verify-box label {
+	font-weight: bold;
+	padding: 10px 20px;
+	text-align: right;
+}
+#verify-box input {
+	width: 300px;
+	height: 26px;
+}
+
+#verify-box input#submit {
+	width: 50px;
+	height: 26px;
+	margin-top: 8px;
+	float: right;
+}
+
+.info {
+	visibility: hidden;
+	font: 12px "Microsoft Yahei";
+	color: #888;
+}
