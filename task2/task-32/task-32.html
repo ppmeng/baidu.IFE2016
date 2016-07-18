@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>任务三十二：表单（四）实现表单自动生成工厂</title>
+	<link rel="stylesheet" type="text/css" href="task-32.css">
+</head>
+<body>
+    <aside>
+    	<form id="form-set">
+            <fieldset id="type-box">
+                <legend>表单类型</legend>
+                <input type="radio" name="type" id="text" checked><label for="text">单行文本域</label>
+                <input type="radio" name="type" id="textarea"><label for="textarea">多行文本域</label>
+                <input type="radio" name="type" id="file"><label for="file">上传文件</label>
+                <input type="radio" name="type" id="radio"><label for="radio">单选按钮</label>
+                <input type="radio" name="type" id="checkbox"><label for="checkbox">复选框</label>
+                <input type="radio" name="type" id="select"><label for="select">下拉列表</label>                
+            </fieldset>
+
+    		<fieldset id="label-box">
+    			<legend>表单标签</legend>
+                <label for="label">Label：</label>
+                <input type="text" id="label"><br/>
+
+                <label for="style">样式：</label>
+                <select id="style" name="style">
+                    <option>样式一</option>
+                    <option>样式二</option>
+                </select>
+    		</fieldset>
+    		
+    		<fieldset id="rule-box">
+    			<legend>表单验证规则</legend>
+                <input type="radio" name="rule" id="text-rule" checked><label for="text-rule">文字(一般用来设置用户名)</label>
+                <input type="radio" name="rule" id="number-rule"><label for="number-rule">数字</label>
+                <input type="radio" name="rule" id="password-rule"><label for="password-rule">密码</label>
+                <input type="radio" name="rule" id="email-rule"><label for="email-rule">邮箱</label>
+                <input type="radio" name="rule" id="tel-rule"><label for="tel-rule">手机号码</label>               
+    		</fieldset>
+
+            <fieldset id="option-box">
+                <legend>选项</legend>
+                <label for="write-option">请输入选项值: </label>
+                <input type="text" id="write-option" placeholder="空格，回车，逗号，句号，分号可分隔选项"> 
+                <div id="option-wrap"></div>           
+            </fieldset>
+
+            <fieldset id="tip-box">
+                <legend>填写规则提示</legend>
+
+                <input type="radio" name="required" id="required"><label for="required">必填</label>
+                <input type="radio" name="required" id="optional"><label for="optional">选填</label>
+
+                <div id="length-box">
+                    <label>输入长度限制: </label>
+                    <input type="number" id="min-len" value="4">&nbsp;-----
+                    <input type="number" id="max-len" value="16">
+                </div>
+                <!--<div id="wh-wrap">
+                    <label>多行文本域长宽限制: </label>
+                    <input type="number" id="width" value="40">&nbsp;-----
+                    <input type="number" id="height" value="16">
+                </div>-->
+            </fieldset>
+            <input type="button" value="add" id="add-button">
+    	</form>
+    </aside>
+    <div id="form-wrap">
+    	
+    </div>
+
+	<script src="task-32.js"></script>
+</body>
+</html>
