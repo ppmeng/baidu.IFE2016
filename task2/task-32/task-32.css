@@ -52,3 +52,13 @@ textarea {
 #option-box {
 	display: none;
 }
+
+#option-wrap {
+	width: 360px;
+}
+#option-wrap span {
+    display: inline-block;
+	padding: 6px;
+	background-color: red;
+	margin: 2px;
+}
