@@ -44,6 +44,13 @@ aside input[type="radio"]+label {
 	border: none;
 	outline: none;
 	border-radius: 6px;
+	color: #fff;
+	background-color: #999;
+	cursor: pointer;
+}
+#add-button:hover {
+	background-color: #888;
+	color: #fff;
 }
 textarea {
 	width: 300px;
@@ -56,9 +63,16 @@ textarea {
 #option-wrap {
 	width: 360px;
 }
+#option-warn {
+	height: 40px;
+	margin: 0 0 0 100px;
+	font: 12px/1.5em "Microsoft Yahei";
+	color: #888;
+}
 #option-wrap span {
     display: inline-block;
 	padding: 6px;
-	background-color: red;
+	color: #fff;
+	background-color: blue;
 	margin: 2px;
 }

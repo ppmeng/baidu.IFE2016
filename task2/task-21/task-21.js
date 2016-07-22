@@ -59,7 +59,7 @@ function strToObj (str, Obj) {
 //渲染
 function render(Obj, divWrap) {
 	divWrap.innerHTML = "";
-    for(e in Obj) {
+    for(var e in Obj) {
     	var span = document.createElement("span");
     	span.innerHTML = e;
     	divWrap.appendChild(span);
