@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>任务三十：表单（二）多个表单项的动态校验</title>
+	<link rel="stylesheet" type="text/css" href="task-30.css">
+</head>
+<body>
+    <form id="verify-box">
+    	<p class="table-row">
+    		<label for="name">名称</label>
+    		<input type="text" name="name" id="name">
+    	</p>
+    	<p class="table-row">
+    		<span></span>
+    		<span id="name-info" class="info">必填，长度为4~16个字符</span>
+    	</p>
+    	<p class="table-row">
+    		<label for="password">密码</label>
+    		<input type="password" name="password" id="password">
+    	</p>
+    	<p class="table-row">
+    		<span></span>
+    		<span id="password-info" class="info">必填，长度为6~16个字符，包含字母和数字</span>
+    	</p>
+    	<p class="table-row">
+    		<label for="confirm-pw">确认密码</label>
+    		<input type="password" name="confirm-pw" id="confirm-pw">
+    	</p>
+    	<p class="table-row">
+    		<span></span>
+    		<span id="confirm-pw-info" class="info">必填，必须和前面密码一致</span>
+    	</p>
+    	<p class="table-row">
+    		<label for="email">邮箱</label>
+    		<input type="email" name="email" id="email">
+    	</p>
+    	<p class="table-row">
+    		<span></span>
+    		<span id="email-info" class="info">填写正确的邮箱格式</span>
+    	</p>
+    	<p class="table-row">
+    		<label for="tel">手机</label>
+    		<input type="tel" name="tel" id="tel">
+    	</p>
+    	<p class="table-row">
+    		<span></span>
+    		<span id="tel-info" class="info">填写正确的手机号码</span>
+    	</p>
+    	<p class="table-row">
+    		<label></label>
+    		<input type="submit" value="提交" id="submit">
+    	</p>
+    </form>
+	<script type="text/javascript" src="task-30.js"></script>
+</body>
+</html>

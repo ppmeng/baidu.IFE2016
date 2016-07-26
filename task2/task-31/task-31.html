@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>任务三十一：表单（三）联动</title>
+	<link rel="stylesheet" type="text/css" href="task-31.css">
+</head>
+<body>
+	<form>
+	    <div id="status">
+	        <input name="status" type="radio" value="student" id="student" checked="checked"><label for="student"><span class="icon"></span>在校生</label>
+	        <input name="status" type="radio" value="not-student" id="not-student"><label for="not-student"><span class="icon"></span>非在校生</label>
+	    </div>
+	    <div id="detail">
+	        <div id="for-student">
+	    	    <label>学校</label>
+	    	    <select name="city" id="city"></select>
+		    	<select name="school" id="schools"></select>
+            </div>
+            <div id="for-not-student" style="display:none">
+            	<label>就业单位</label>
+            	<input type="text">
+            </div>
+	    </div>
+	</form>
+	<script type="text/javascript" src="task-31.js">
+	</script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  width: 1240px;
+  margin: 20px auto;
+  padding-right: 10px;
+}
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.boxbot {
+  position: relative;
+}
+
+.boxbot-box {
+  width: 37px;
+  height: 37px;
+  box-sizing: border-box;
+  transition-property: left, top, transform;
+  transition-duration: .25s;
+}
+
+.boxbot-bot {
+  position: absolute;
+  padding-left: 1px;
+  padding-top: 1px;
+}
+
+.boxbot-bot img {
+  width: 36px;
+  height: 36px;
+}
+
+.boxbot-map {
+  border-collapse: collapse;
+  float: left;
+}
+
+td.boxbot-box {
+  border: 1px solid #bdc3c7;
+  padding: 5px;
+  font-size: 12px;
+}
+
+.boxbot-box[data-type="y-axis"],
+.boxbot-box[data-type="x-axis"] {
+  border: 0;
+}
+
+.boxbot-box[data-type="y-axis"] {
+  text-align: right;
+}
+
+.boxbot-box[data-type="x-axis"] {
+  text-align: center;
+}
+
+.boxbot-box[data-type="wall"] {
+  background-color: #bdc3c7;
+}
+
+.boxbot-controls {
+  float: right;
+  width: 440px;
+  overflow: hidden;
+}
+
+.boxbot-buttons {
+  margin: 7px 0 12px 0;
+}
+
+.boxbot-buttons select,
+.boxbot-buttons input,
+.boxbot-buttons button {
+  height: 18px;
+  margin-right: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.boxbot-buttons input {
+  float: right;
+  margin-right: 0;
+  width: 140px;
+}
+
+.boxbot-commander {
+  height: 741px;
+  overflow: hidden;
+}
+
+.commander-lines-wrapper,
+.commander-editor {
+  float: left;
+  font-family: Menlo, Consolas, monospace;
+  line-height: 20px;
+  height: 100%;
+  color: #ecf0f1;
+}
+
+.commander-lines-wrapper {
+  border-radius: 4px 0 0 4px;
+  background-color: #2c3e50;
+  width: 40px;
+  font-size: 12px;
+  text-align: right;
+  padding-top: 5px;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+.commander-lines {
+  position: relative;
+}
+
+.commander-lines-item {
+  padding-right: 5px;
+}
+
+.commander-lines-item.error {
+  background-color: #ea6153;
+}
+
+.commander-lines-item.success {
+  background-color: #27ae60;
+}
+
+.commander-lines-item.warning {
+  background-color: #f39c12;
+}
+
+.commander-editor {
+  font-size: 16px;
+  width: 400px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 0 4px 4px 0;
+  outline: none;
+  padding: 5px;
+  margin: 0;
+  background-color: #34495e;
+  resize: none;
+}
+
+.note {
+  margin-top: 20px;
+  color: #999;
+}
+
+.boxbot-30x30 .boxbot-commander {
+  height: 751px;
+}
+
+.boxbot-30x30 .boxbot-buttons {
+  margin: 0 0 7px 0;
+}
+
+.boxbot-30x30 .boxbot-box {
+  width: 25px;
+  height: 25px;
+}
+
+.boxbot-30x30 .boxbot-bot img {
+  width: 24px;
+  height: 24px;
+}

@@ -21,6 +21,7 @@ http://ife.baidu.com/task/all
 - task2-5:http://ppmeng.github.io/baidu.IFE2016/task2/task2-5/task2-5.html
 - task-18:http://ppmeng.github.io/baidu.IFE2016/task2/task-18/task-18.html
 - task-19:http://ppmeng.github.io/baidu.IFE2016/task2/task-19/task-19.html
+<<<<<<< HEAD
 - task-21:http://ppmeng.github.io/baidu.IFE2016/task2/task-21/task-21.html
 - task-22:http://ppmeng.github.io/baidu.IFE2016/task2/task-22/task-22.html
 - task-23:http://ppmeng.github.io/baidu.IFE2016/task2/task-23/task-23.html
@@ -49,3 +50,6 @@ http://ife.baidu.com/task/all
 
 ###task4###
 - task-50:http://ppmeng.github.io/baidu.IFE2016/task4/task-50/task-50.html
+=======
+- task-21:http://ppmeng.github.io/baidu.IFE2016/task2/task-21/task-21.html
+>>>>>>> master

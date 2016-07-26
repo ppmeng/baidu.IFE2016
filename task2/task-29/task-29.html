@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>任务二十九：表单（一）单个表单项的检验</title>
+	<link rel="stylesheet" type="text/css" href="task-29.css">
+</head>
+<body>
+	<form method="post" action="#">
+	    <div class="table-row">
+	        <label for="name">名称</label>
+	        <p>
+	            <input id="name" type="text" required="required" autofocus>
+	            <input id="submit" type="submit" value="验证">
+	        </p>
+	    </div>
+	    <div class="table-row">
+	        <p></p>
+	        <p id="info">必填，单个中文字符占2个字符，其余为1个字符</p>
+	    </div>
+	</form>
+	<script type="text/javascript">
+		function addEventHandler(ele, event, handler) {
+			if (ele.addEventListener) {
+				ele.addEventListener(event, handler);
+			}else if (ele.attachEvent) {
+				ele.attachEvent("on" + event, handler);
+			}else {
+				ele["on" + event] = handler;
+			}
+		}
+
+        function preventDefault(event) {
+        	event.cancelable = true;
+        	if (event && event.preventDefault) {
+        		event.preventDefault();
+        	}else {
+        		event.returnValue = false;
+        		return false;
+        	}
+        }
+        
+        function countLength(str) {
+        	var len = 0;
+            for (var i = 0; i < str.length; i++) {
+            	var charpos = str.charCodeAt(i);
+            	if (charpos >= 0 && charpos <= 128) {
+            		len++;
+            	}else {
+            		len += 2;
+            	}
+            }
+            return len;
+        }
+
+		window.onload = function() {
+			var submit = document.forms[0];
+			var verifyInfo = document.getElementById("info");
+			addEventHandler(submit, "submit", function(event) {
+				var input = document.getElementById("name");
+                var len = countLength(input.value);
+                if (len >= 4 && len <= 16) {
+                	verifyInfo.innerHTML = "格式正确";
+                	verifyInfo.style.color = "green";
+                    input.style.borderColor = "green";
+                }else {
+                	verifyInfo.innerHTML = "输入不合法，请输入4-16个字符，单个中文字符占2个字符，其余为1个字符";
+                	verifyInfo.style.color = "red";
+                    input.style.borderColor = "red";
+                }
+				preventDefault(event);
+			});
+		}
+	</script>
+</body>
+</html>

@@ -9,6 +9,7 @@
     <form>
         <fieldset>
             <legend>多叉树遍历（DFS、BFS）</legend>
+<<<<<<< HEAD
             <input id="DFS" type="button" value="深度优先搜索">
             <input id="BFS" type="button" value="广度优先搜索">
             <div id="search">
@@ -21,6 +22,18 @@
             </div>
             <label for="insert">添加子节点：</label><input id="insert" type="text" placeholder="先点击选定父节点再添加">
             <label for="delete">删除节点：</label><input id="delete" type="text" placeholder="删除选定的节点">
+=======
+            <input id="DFS" type="button" name="button" value="深度优先搜索">
+            <input id="BFS" type="button" name="button" value="广度优先搜索">
+            
+            <div id="operator">
+                <p>说明：以下三种操作在不指定具体查询方式时默认查询方式为DFS，添加和删除需要先点击指定节点(点击一次变色即选定，点击两次可取消，可同时指定多个):</p>
+                <input id="input" type="text" placeholder="输入要查询，添加的节点内容">
+                <input id="search" type="button" name="button" value="查询节点">
+                <input id="insert" type="button" name="button" value="添加节点">
+                <input id="delete" type="button" name="button" value="删除节点">
+            </div>
+>>>>>>> master
         </fieldset>
     </form>   
     <div class="root">Super
@@ -31,7 +44,11 @@
                 <div class="child-3">Cola</div>
             </div>
             <div class="child-2">Phone</div>
+<<<<<<< HEAD
             <div class="child-2">School
+=======
+            <div class="child-2">Car
+>>>>>>> master
                 <div class="child-3">Book</div>
                 <div class="child-3">Pen</div>
             </div>

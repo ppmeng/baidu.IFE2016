@@ -1,0 +1,18 @@
+body {
+	min-width: 500px;
+}
+.form {
+	display: block;
+}
+.box {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	margin: 5px;
+	background: red;
+	font-size: 20px;
+	color: #fff;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}

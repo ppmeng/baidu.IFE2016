@@ -3,7 +3,11 @@ function $(ele) {
  }
  var queue = [];
  var snapshots = []; //快照集合
+<<<<<<< HEAD
  var inAnimation = false; //若正在渲染则为true，否则为false
+=======
+ //var interval = $("#interval").value;
+>>>>>>> master
 
 $("#chart").addEventListener("click", function(e) {
     var node = e.target;
@@ -14,18 +18,34 @@ $("#chart").addEventListener("click", function(e) {
     }
 });
 
+<<<<<<< HEAD
 
 function init() {
     queue = [];
     for (var i = 0; i < 50; i++) {
+=======
+function initData(number) {
+    queue = [];
+    for (var i = 0; i < number; i++) {
+>>>>>>> master
         queue.push(Math.floor(Math.random() * 90 + 10));
     }
     return queue;
 }
 
+<<<<<<< HEAD
 window.onload = function() {
     init();
     render();
+=======
+function init() {
+    initData(50);
+    render();
+}
+
+window.onload = function() {
+    init();
+>>>>>>> master
 }
 
 function getInputValue() {
@@ -63,11 +83,23 @@ function changeAlgorithm() {
     }
 }
 
+<<<<<<< HEAD
+=======
+function interval() {
+    var speed = parseInt($("#interval").value);
+    return speed;
+}
+
+>>>>>>> master
 $("#sort").onclick = function() {
     if (queue.length == 0) return alert("队列为空");
     changeAlgorithm();
     var sort = $("#sort");
+<<<<<<< HEAD
     var speed = parseInt($("#interval").value);
+=======
+    var speed = interval();
+>>>>>>> master
     sort.timer = setInterval(paint, speed); //定时绘制,属性
     function paint() {
         var snapshot = snapshots.shift() || [];
@@ -113,7 +145,11 @@ $("#sort").onclick = function() {
  }
  //随机产生
  $("#random").onclick = function() {
+<<<<<<< HEAD
      init();
+=======
+     initData(50);
+>>>>>>> master
      render();
  }
  //清空
@@ -135,7 +171,10 @@ function bubbleSort(arr) {
     var temp;
     for (var i = arr.length; i >= 2; i--) {
         for (var j = 0; j < i; j++) {
+<<<<<<< HEAD
             //renderRangeColor(j, i);
+=======
+>>>>>>> master
             if (arr[j] > arr[j + 1]) {
                 temp = arr[j + 1];
                 arr[j + 1] = arr[j];
@@ -256,11 +295,17 @@ function quickSort(arr) {
 function render(arr) {
     var array = arr || queue;
     var content = array.map(function(v) {
+<<<<<<< HEAD
         return "<div class='bar' title = "+v+" style='height:" + (v * 4) + "px'></div>";
+=======
+        var color = '#' + Math.ceil((v/100).toFixed(1) * 0xffffff).toString(16);
+        return "<div class='bar' title = "+v+" style='height:" + (v * 4) + "px; background-color:"+color+"'></div>";
+>>>>>>> master
     }).join("");
     $("#chart").innerHTML = content;
 }
 
+<<<<<<< HEAD
 function renderRangeColor(left, right) {
     for (var i = left; i <= right; i++) {
         $("#chart").childNodes[i].style.backgroundColor = "red";  
@@ -270,3 +315,5 @@ function renderRangeColor(left, right) {
 function renderChangeColor(i, j) {
 
 }
+=======
+>>>>>>> master

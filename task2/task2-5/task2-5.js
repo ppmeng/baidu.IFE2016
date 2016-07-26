@@ -93,6 +93,7 @@ var pageState = {
 
 function renderChart() {  
   var color = "",text = "";
+<<<<<<< HEAD
   for (var item in chartData) {
     color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
     text += '<div class="aqibar" title="'+item+"AQI:"+chartData[item]+'" style="height:'+chartData[item]+'px; background-color:'+color+'"></div>';
@@ -108,6 +109,24 @@ function renderChart() {
       aqishow.innerHTML = aqibar[i].title;
     })
   }需要修改*/
+=======
+  var aqiChartWrap = document.getElementsByClassName('aqi-chart-wrap')[0];
+  aqiChartWrap.innerHTML = ""; 
+  for (var item in chartData) {
+    color = '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+    //不兼容IE 
+    var aqibar = document.createElement("div");
+    aqibar.setAttribute("class", "aqibar");
+    var titletext = item + "AQI:" + chartData[item];
+    aqibar.setAttribute("title", titletext);
+    aqibar.style.height = chartData[item] + "px";
+    aqibar.style.backgroundColor = color;
+    aqiChartWrap.appendChild(aqibar);  
+    /*text += '<div class="aqibar" title="'+item+"AQI:"+chartData[item]+'" style="height:'+
+            chartData[item]+'px; background-color:'+color+'"></div>';*/
+  }
+ // aqiChartWrap.innerHTML = text;
+>>>>>>> master
 }
 
 /**

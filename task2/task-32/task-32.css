@@ -1,0 +1,78 @@
+body {
+    font-family: "Microsoft Yahei", sans-serif;
+}
+
+aside {
+	width: 400px;
+	float: left;
+	line-height: 2em;
+}
+fieldset {
+	margin-bottom: 10px;
+}
+input[type="text"] {
+	width: 200px;
+    height: 20px;
+	font: 12px "Microsoft Yahei";
+}
+
+aside input[type="radio"]+label {
+	display: inline-block;
+	min-width: 96px; 
+}
+#number-rule {
+    margin-left: 36px;
+}
+
+#write-option {
+	width: 250px;
+	height: 20px;
+}
+#min-len,#max-len {
+	width: 80px;
+	height: 20px;
+}
+#form-wrap {
+	height: 300px;
+	margin-left: 450px;
+	border: 1px solid red;
+}
+#add-button {
+	display: inline-block;
+	width: 80px;
+	height: 30px;
+	border: none;
+	outline: none;
+	border-radius: 6px;
+	color: #fff;
+	background-color: #999;
+	cursor: pointer;
+}
+#add-button:hover {
+	background-color: #888;
+	color: #fff;
+}
+textarea {
+	width: 300px;
+	height: 80px;
+}
+#option-box {
+	display: none;
+}
+
+#option-wrap {
+	width: 360px;
+}
+#option-warn {
+	height: 40px;
+	margin: 0 0 0 100px;
+	font: 12px/1.5em "Microsoft Yahei";
+	color: #888;
+}
+#option-wrap span {
+    display: inline-block;
+	padding: 6px;
+	color: #fff;
+	background-color: blue;
+	margin: 2px;
+}

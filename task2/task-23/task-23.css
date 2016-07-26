@@ -20,6 +20,7 @@ legend {
 #BFS {
 	padding: 6px 10px;
 	margin: 20px 0 0 30px;
+<<<<<<< HEAD
 	-webkit-transition: all .5s ease-in-out; /*Safari  Chrome*/
 	-moz-transition: all .5s ease-in-out; /*Firefox4*/
 	-o-transition: all .5s ease-in-out; /*Opera*/
@@ -28,10 +29,20 @@ legend {
 #DFS:hover,
 #BFS:hover,
 #submit:hover {
+=======
+	-webkit-transition: all .3s ease-in-out; /*Safari  Chrome*/
+	-moz-transition: all .3s ease-in-out; /*Firefox4*/
+	-o-transition: all .3s ease-in-out; /*Opera*/
+	transition: all .3s ease-in-out;
+}
+#DFS:hover,
+#BFS:hover {
+>>>>>>> master
     cursor: pointer;
     color: #fff;
     background-color: #ccc;
 }
+<<<<<<< HEAD
 #search {
 	display: inline-block;
 	padding: 10px 20px;
@@ -58,11 +69,34 @@ label:nth-of-type(1) {
 }
 label:nth-of-type(2) {
 	margin-left: 30px;
+=======
+fieldset #operator {
+	margin-left: 80px;
+	display: inline-block;
+}
+fieldset input {
+	margin-left: 20px;
+}
+#input {
+	width: 250px;
+	height: 26px;
+}
+label:nth-of-type(1) {
+	margin-left: 40px;
+}
+label:nth-of-type(2) {
+	margin-left: 20px;
+>>>>>>> master
 }
 .root,
 .child-1,
 .child-2,
+<<<<<<< HEAD
 .child-3 {
+=======
+.child-3,
+.child-4 {
+>>>>>>> master
     display: flex;
     display: -webkit-flex;
     justify-content: space-around;
@@ -93,4 +127,8 @@ label:nth-of-type(2) {
 }
 .child-4 {
 	border: 1px solid #888;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
